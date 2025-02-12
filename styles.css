@@ -1,0 +1,34 @@
+/* Estructura principal */
+
+body{
+    margin: 0;
+
+    width: 100dvw;
+    height: 100dvh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#statsView{
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    gap: 4px;
+}
+
+main{
+    height: 75dvh;
+    width: 95dvw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black;
+    border-radius: 32px;
+    overflow: hidden;
+    background-color: lightgreen;
+
+}
