@@ -5,6 +5,12 @@ const displayedEntities = {
     bases: []
 }
 
+// Información sobre la partida actual
+const gameStats = {
+    rescued: 0,
+    dead: 0
+}
+
 // Información del tamaño de los elementos
 const info = {
     survivors: {

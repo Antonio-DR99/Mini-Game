@@ -8,6 +8,7 @@ const display = {
 // INICIAR EL JUEGO
 game = {
     start() {
+        graphics.render();
         document.querySelector('main h1').style.display = 'none';
     }
 };
