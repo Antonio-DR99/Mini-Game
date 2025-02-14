@@ -8,6 +8,7 @@ const display = {
 game = {
     start() {
         document.querySelector('main h1').style.display = 'none';
+        showHelicopter();
     }
 };
 

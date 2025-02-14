@@ -32,3 +32,10 @@ main{
     background-color: lightgreen;
 
 }
+
+#helicopter{
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    color: white;
+}
