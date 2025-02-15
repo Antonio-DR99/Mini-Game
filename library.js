@@ -7,10 +7,13 @@ const display = {
 
 // INICIAR EL JUEGO
 game = {
+    started: false,
     start() {
-        graphics.render();
+        if(game.started) return
+        // graphics.render();
         document.querySelector('main h1').style.display = 'none';
         showHelicopter();
+        demoSurvivors();
     }
 };
 

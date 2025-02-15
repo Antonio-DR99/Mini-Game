@@ -14,8 +14,8 @@ const gameStats = {
 // Información del tamaño de los elementos
 const info = {
     survivors: {
-        width: 0,
-        height: 0
+        width: 40,
+        height: 60
     },
     food: {
         width: 0,

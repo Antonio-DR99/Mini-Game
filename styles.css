@@ -22,6 +22,7 @@ main{
     height: 75dvh;
     width: 95dvw;
 
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
