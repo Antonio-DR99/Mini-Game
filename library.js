@@ -14,6 +14,7 @@ game = {
         document.querySelector('main h1').style.display = 'none';
         showHelicopter();
         demoSurvivors();
+        showBases();
     }
 };
 

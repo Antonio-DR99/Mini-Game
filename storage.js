@@ -22,7 +22,7 @@ const info = {
         height: 0
     },
     bases: {
-        width: 0,
-        height: 0
+        width: 90,
+        height: 90
     }
 }
