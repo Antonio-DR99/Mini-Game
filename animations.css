@@ -19,12 +19,33 @@
       transform: rotate(20deg) translateY(0); 
     }
 }
-  
+/* Animación de regreso a la base */
+@keyframes moveHelicopterBack {
+  0% {
+      transform: rotate(20deg) translateY(0);
+  }
+  25% {
+      transform: rotate(-10deg) translateY(-3px);
+  }
+  50% {
+      transform: rotate(10deg) translateY(3px);
+  }
+  75% {
+      transform: rotate(0deg) translateY(0);
+  }
+  90% {
+      transform: scale(1.1); /* Simula un leve frenado */
+  }
+  100% {
+      transform: scale(1) rotate(0deg); /* Regresa a su estado normal */
+  }
+}
+
 /* Aplicamos la animación cuando se mueva */
 .move {
     animation: moveHelicopter 3s ease-in-out forwards;
 }
 
 .moveBack{
-    animation: moveHelicopter 3s ease-in-out reverse forwards;
+    animation: moveHelicopterBack 3s ease-in-out forwards;
 }
