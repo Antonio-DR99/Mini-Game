@@ -24,3 +24,7 @@
 .move {
     animation: moveHelicopter 3s ease-in-out forwards;
 }
+
+.moveBack{
+    animation: moveHelicopter 3s ease-in-out reverse forwards;
+}
