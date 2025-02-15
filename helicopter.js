@@ -13,3 +13,16 @@ function showHelicopter() {
     main.appendChild(hel);
     
 }
+
+function moveHelicopter(target){
+    let helicopter= document.getElementById("helicopter"); 
+
+    let targetTop=target.offsetTop; 
+    let targetLeft=target.offsetLeft; 
+
+    helicopter.style.top=targetTop+'px';
+    helicopter.style.left=targetLeft+'px';
+    
+    helicopter.classList.add("move");
+}
+

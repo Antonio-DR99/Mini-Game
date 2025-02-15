@@ -1,10 +1,7 @@
 function demoSurvivors() {
     for (let i=0; i<2; i++) {
         let survivor = document.createElement('div');
-        survivor.style.width = '40px';
-        survivor.style.height = '60px';
-        survivor.style.position = 'absolute';
-        survivor.style.backgroundColor = 'red';
+        survivor.id="survivor";
         
         let position = generateValidCoordsFor('survivor');
         survivor.style.top = position[0] + 'px';
@@ -12,5 +9,9 @@ function demoSurvivors() {
         
         main.appendChild(survivor);
         displayedEntities.survivors.push(position);
+
+        survivor.addEventListener('click', () => {
+            moveHelicopter(survivor);  // Llamar a la función para mover el helicóptero
+        });
     }
 }

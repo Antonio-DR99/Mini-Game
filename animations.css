@@ -1,0 +1,20 @@
+
+
+/* Definir animación de movimiento*/
+@keyframes moveHelicopter {
+    0% {
+
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(15deg); 
+    }
+    100% {
+      transform: rotate(0deg); 
+    }
+}
+  
+/* Aplicamos la animación cuando se mueva */
+.move {
+    animation: moveHelicopter 3s ease-in-out forwards;
+}
