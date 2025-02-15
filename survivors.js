@@ -10,8 +10,8 @@ function demoSurvivors() {
         main.appendChild(survivor);
         displayedEntities.survivors.push(position);
 
-        survivor.addEventListener('click', () => {
-            moveHelicopter(survivor);  // Llamar a la función para mover el helicóptero
+        survivor.addEventListener('click', function() {
+            moveHelicopter(survivor);  // Llamar a la función para mover el heli
         });
     }
 }
