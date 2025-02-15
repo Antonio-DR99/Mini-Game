@@ -49,7 +49,7 @@ function moveHelicopter(target){
     setTimeout(moveHelicopterBack,4000,survivor); 
 }
 
-function moveHelicopterBack(survivor,targetTop,targetLeft){
+function moveHelicopterBack(survivor){
     let helicopter=document.getElementById("helicopter"); 
 
     //Coordenadas de destino
