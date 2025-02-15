@@ -14,7 +14,15 @@ function showHelicopter() {
     
 }
 
+let helicopterMoving=false //Varible para saber si el heli esta en movimiento
+
 function moveHelicopter(target){
+
+    //si el heli esta en movimiento no hacer nada 
+    if (helicopterMoving) {
+        return;
+    }
+
     let helicopter= document.getElementById("helicopter"); 
 
     let targetTop=target.offsetTop; 
@@ -24,5 +32,8 @@ function moveHelicopter(target){
     helicopter.style.left=targetLeft+'px';
     
     helicopter.classList.add("move");
+
+    
+    helicopterMoving=true;
 }
 

@@ -4,13 +4,19 @@
 @keyframes moveHelicopter {
     0% {
 
-      transform: rotate(0deg);
+      transform: rotate(0deg) translateY(0);
+    }
+    25% {
+      transform: rotate(-30deg) translateY(-5px); 
     }
     50% {
-      transform: rotate(15deg); 
+      transform: rotate(30deg) translateY(5px); 
+    }
+    75% {
+      transform: rotate(-30deg) translateY(-5px); 
     }
     100% {
-      transform: rotate(0deg); 
+      transform: rotate(20deg) translateY(0); 
     }
 }
   
