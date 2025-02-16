@@ -1,31 +1,39 @@
 const main = document.querySelector('main');
 
+// INFORMACIÓN SOBRE LA PANTALLA
 const display = {
     width() { return main.clientWidth; },
     height() { return main.clientHeight; }
-},
+}
 
-// INICIAR EL JUEGO
-game = {
+// INFORMACIÓN SOBRE EL JUEGO
+const game = {
     started: false,
+    survGene: 0,
+    survResc: 0,
+    survDead: 0,
+
     start() {
         if(game.started) return
         // graphics.render();
         document.querySelector('main h1').style.display = 'none';
         showHelicopter();
-        demoSurvivors();
         showBases();
         showCloud();
         foodGenerate();
+
+        // Inicializar valores necesarios
+        game.survGene = 0,
+        game.survResc = 0,
+        game.survDead = 0,
         game.started = true;
+    },
+
+    death() {
+        alert('Game Over') // Solución temporal
+        game.started = false;
     }
 };
-
-// FIN DEL JUEGO
- function endgame(){
-    alert('Game Over');
-    location.reload();
- }
 
 // Genera coordenadas válidas sin colisiones en las coordenadas del mapa.
 function generateValidCoordsFor(entity) {
@@ -81,4 +89,8 @@ function generateValidCoordsFor(entity) {
     } while (!valid && attempts < 100);
 
     return [top, left];
+}
+
+function rngWithin(min, max) {
+    return Math.random() * (max-min) + max;
 }

@@ -1,14 +1,8 @@
 // Almacenamiento con los elementos creados
 const displayedEntities = {
-    survivors: [],
+    survivors: [],          // posX, posY, state, life, maxLife
     food: [],
     bases: []
-}
-
-// Información sobre la partida actual
-const gameStats = {
-    rescued: 0,
-    dead: 0
 }
 
 // Información del tamaño de los elementos

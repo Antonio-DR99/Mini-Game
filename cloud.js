@@ -63,10 +63,10 @@ function checkCollision() {
 
     // Verificar si las coordenadas se superponen
     if (cloudX < heliX + heliSize &&    // Verifica si el borde derecho de la nube está a la izquierda del borde derecho del helicóptero
-        cloudX + cloudSize > heliX &&  // Verifica si el borde izquierdo de la nube está a la derecha del borde izquierdo del helicóptero
-        cloudY < heliY + heliSize &&  // Verifica si el borde inferior de la nube está arriba del borde inferior del helicóptero
-        cloudY + cloudSize > heliY)  // Verifica si el borde superior de la nube está debajo del borde superior del helicóptero
+        cloudX + cloudSize > heliX &&   // Verifica si el borde izquierdo de la nube está a la derecha del borde izquierdo del helicóptero
+        cloudY < heliY + heliSize &&    // Verifica si el borde inferior de la nube está arriba del borde inferior del helicóptero
+        cloudY + cloudSize > heliY)     // Verifica si el borde superior de la nube está debajo del borde superior del helicóptero
         {  
-        endgame();
+        game.death();
     }
 }
