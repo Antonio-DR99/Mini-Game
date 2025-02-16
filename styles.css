@@ -48,7 +48,7 @@ main{
     width: 50px;
     height: 50px;
     background-color: black;
-    transition: top 3s ease, left 3s ease, transform 3s ease;
+    transition: top 5s ease, left 5s ease, transform 5s ease;
     z-index: 2;
 }
 
