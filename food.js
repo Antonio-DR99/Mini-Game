@@ -11,10 +11,14 @@ function foodGenerate() {
 
     main.appendChild(food);
     displayedEntities.food.push(food);
+    }
+    
+    foodRot(food);
 }
 
-//Determinar en un tiempo aleatorio la desaparicion de la comida
-let desaparicion = Math.random() * (10000 - 6000) + 6000;
+//Hace desaparecer la comida
+function foodRot(food){
+    let desaparicion = Math.random() * (10000 - 6000) + 6000;
 
     setTimeout(function () {
         
@@ -24,10 +28,8 @@ let desaparicion = Math.random() * (10000 - 6000) + 6000;
         
         displayedEntities.food = [];
     }, desaparicion);
-
-    let aparicion = Math.random() * (16000 - 12000) + 12000;
-
-    setTimeout(foodGenerate, aparicion);
-
 }
 
+//Despues de un tiempo vuelve a generar comida
+let aparicion = Math.random() * (16000 - 12000) + 12000;
+setTimeout(foodGenerate, aparicion);
