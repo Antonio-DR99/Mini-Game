@@ -34,6 +34,14 @@ main{
 
 }
 
+/*Estilos comida*/
+#food{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: greenyellow;
+}
+
 /* Estilos para el helicóptero */
 #helicopter {
     position: absolute;

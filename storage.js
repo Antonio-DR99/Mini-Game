@@ -18,8 +18,8 @@ const info = {
         height: 60
     },
     food: {
-        width: 0,
-        height: 0
+        width: 40,
+        height: 40
     },
     bases: {
         width: 90,

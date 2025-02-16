@@ -16,6 +16,7 @@ game = {
         demoSurvivors();
         showBases();
         showCloud();
+        foodGenerate();
     }
 };
 
