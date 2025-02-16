@@ -21,6 +21,8 @@ const game = {
         showBases();
         showCloud();
         foodGenerate();
+        timer.enable();
+        timer.tick();
 
         // Inicializar valores necesarios
         game.survGene = 0,
@@ -34,6 +36,13 @@ const game = {
         game.started = false;
     }
 };
+
+const ui = {
+    updateScores() {
+        document.getElementById('statAbd').textContent = game.survResc;
+        document.getElementById('statDea').textContent = game.survDead;
+    }
+}
 
 // Genera coordenadas válidas sin colisiones en las coordenadas del mapa.
 function generateValidCoordsFor(entity) {
@@ -88,7 +97,7 @@ function generateValidCoordsFor(entity) {
 
     } while (!valid && attempts < 100);
 
-    return [top, left];
+    return [left, top];
 }
 
 function rngWithin(min, max) {

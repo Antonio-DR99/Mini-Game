@@ -1,12 +1,12 @@
 function generateSurvivor() {
-    let num = game.survGene;
+    let numId = game.survGene;
     let entity = document.createElement('div');
-    entity.id = 'survivor' + num;
+    entity.id = 'survivor' + numId;
     entity.className = 'survivor';
 
     let position = generateValidCoordsFor('survivor')
-    entity.style.top = position[0] + 'px';
-    entity.style.left = position[1] + 'px';
+    entity.style.left = position[0] + 'px';
+    entity.style.top = position[1] + 'px';
 
     let rngLife = rngWithin(10000, 15000)
 
@@ -19,15 +19,21 @@ function generateSurvivor() {
     });
 
     entity.addEventListener('click', function() {
-        moveHelicopter(entity);  // Llamar a la función para mover el heli
+        moveHelicopter(numId);  // Llamar a la función para mover el heli
     });
     
     main.appendChild(entity);
-    game.surGenerated++;
+    game.survGene++;
 }
 
+function killSurvivor(who){
+    displayedEntities.survivors[who].state = 'dead';
+    console.log('survivor' + who + ' ha muerto.')
+    // display kill state
+}
+
+/* DEPRECATED FUNCTION
 function demoSurvivors() {
-    // DEPRECATED FUNCTION
     for (let i=0; i<2; i++) {
         let survivor = document.createElement('div');
         survivor.id="survivor";
@@ -43,4 +49,4 @@ function demoSurvivors() {
             moveHelicopter(survivor);  // Llamar a la función para mover el heli
         });
     }
-}
+} */

@@ -16,30 +16,26 @@ function showHelicopter() {
 }
 
 //Funcion para mover el heli hacia el superviviente
-function moveHelicopter(target){
+function moveHelicopter(surId){
 
     //si el heli esta en movimiento no hacer nada 
-    if (helicopterMoving) {
-        return;
-    }
+    if (helicopterMoving) return;
 
-    let helicopter= document.getElementById("helicopter"); 
-    let survivor=target; //Superviveinte seleccioando
+    //solo recoger supervivientes en estado normal.
+    if (displayedEntities.survivors[surId].state != 'default') return;
+
+    let helicopter = document.getElementById("helicopter"); 
+    let survivor = document.getElementById(`survivor${surId}`);
 
     //resetear las animaciones
     helicopter.classList.remove("move","moveBack"); 
 
-    //coordenadas del superviviente
-    let targetTop=target.offsetTop; 
-    let targetLeft=target.offsetLeft; 
-
     // Cambiar el estado a miovimeinto
     helicopterMoving=true; 
 
-
     //mover el heli hacia el superviviente
-    helicopter.style.top=targetTop+'px';
-    helicopter.style.left=targetLeft+'px';
+    helicopter.style.left = displayedEntities.survivors[surId].posX +'px';
+    helicopter.style.top = displayedEntities.survivors[surId].posY +'px';
     
     //agregamos la calse de animacion para el heli
     helicopter.classList.add("move");
@@ -114,6 +110,8 @@ function restoreSurvivor(survivor,destinationTop,destinationLeft){
     
     helicopterMoving=false; //permitir de nuevo hacer clic al terminar el movimeinto
 
+    game.survResc++;
+    ui.updateScores();
 }
 
 //funcion para calcular la distancia entre 2 puntos
