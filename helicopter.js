@@ -110,6 +110,8 @@ function restoreSurvivor(survivor,destinationTop,destinationLeft){
     survivor.style.top=destinationTop+"px";
     survivor.style.left=destinationLeft+"px";
 
+    survivor.style.pointerEvents="none";
+    
     helicopterMoving=false; //permitir de nuevo hacer clic al terminar el movimeinto
 
 }
