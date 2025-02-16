@@ -11,7 +11,7 @@ function foodGenerate() {
 
     main.appendChild(food);
     displayedEntities.food.push(food);
-    }
+}
 
 //Determinar en un tiempo aleatorio la desaparicion de la comida
 let desaparicion = Math.random() * (10000 - 6000) + 6000;

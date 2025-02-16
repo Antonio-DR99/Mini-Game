@@ -28,7 +28,6 @@ function moveHelicopter(target){
 
     //resetear las animaciones
     helicopter.classList.remove("move","moveBack"); 
-    void helicopter.offsetWidth;
 
     //coordenadas del superviviente
     let targetTop=target.offsetTop; 
@@ -83,9 +82,8 @@ function moveHelicopterBack(survivor){
         }
     }
 
-    //quitar animacion anterior y agregar la de regreso
+    //quitar animacion anterior 
     helicopter.classList.remove("move","moveBack");
-    void helicopter.offsetWidth; //fuerza reflow
 
     //Coordenadas de destino
     let destinationTop=baseClose.offsetTop; 
