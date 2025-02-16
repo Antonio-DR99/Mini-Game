@@ -17,6 +17,7 @@ game = {
         showBases();
         showCloud();
         foodGenerate();
+        game.started = true;
     }
 };
 
