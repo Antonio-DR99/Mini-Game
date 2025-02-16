@@ -19,6 +19,12 @@ game = {
     }
 };
 
+// FIN DEL JUEGO
+ function endgame(){
+    alert('Game Over');
+    location.reload();
+ }
+
 // Genera coordenadas válidas sin colisiones en las coordenadas del mapa.
 function generateValidCoordsFor(entity) {
 

@@ -4,7 +4,6 @@ let helicopterMoving=false //Varible para saber si el heli esta en movimiento
 
 //-------------------------------------//
 
-
 //Crear el heli en la pantalla 
 function showHelicopter() {
     let hel=document.createElement('div'); 
