@@ -58,13 +58,38 @@ function moveHelicopter(target){
 function moveHelicopterBack(survivor){
     let helicopter=document.getElementById("helicopter"); 
 
+    let bases=document.querySelectorAll(".base1, .base2, .base3, .base4");
+
+
+    let baseClose=null; //almacenar la base mas cercana
+    let minDistance=Infinity;
+
+    //obetenemos la posicon del heli
+    let heliTop=helicopter.offsetTop;
+    let heliLeft=helicopter.offsetLeft;
+
+    //Buscamos la base mas cercana
+    for (let i=0; i<bases.length; i++){
+        let base=bases[i]; 
+        let baseTop=base.offsetTop; 
+        let baseLeft=base.offsetLeft; 
+        
+        //almacenamos la distacia entre el heli y una base
+        let distace=calculateDistance(heliLeft, heliTop, baseLeft, baseTop);
+
+        if (distace<minDistance) {
+            minDistance=distace; 
+            baseClose=base;
+        }
+    }
+
     //quitar animacion anterior y agregar la de regreso
     helicopter.classList.remove("move","moveBack");
-
     void helicopter.offsetWidth; //fuerza reflow
+
     //Coordenadas de destino
-    let destinationTop=50; 
-    let destinationLeft=50;
+    let destinationTop=baseClose.offsetTop; 
+    let destinationLeft=baseClose.offsetLeft;
     
     //Mover el heli a la base de destino
     helicopter.style.top=destinationTop+'px';

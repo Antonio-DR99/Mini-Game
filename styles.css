@@ -41,7 +41,7 @@ main{
     height: 50px;
     background-color: black;
     transition: top 3s ease, left 3s ease, transform 3s ease;
-    z-index: 1;
+    z-index: 2;
 }
 
 #survivor{
@@ -49,18 +49,18 @@ main{
     background-color: red;
     width: 40px;
     height:60px;
+    z-index: 1;
 
 }
 
 /* Estilos para las bases */
 .base1 {
-position: absolute;   
-width: 90px;
-height: 90px;
-background-color: rgb(4, 0, 255);
-top: 70px;
-left: 70px
-
+    position: absolute;   
+    width: 90px;
+    height: 90px;
+    background-color: rgb(4, 0, 255);
+    top: 70px;
+    left: 70px
 }
 
 .base2 { 
@@ -70,7 +70,6 @@ left: 70px
     background-color: rgb(4, 0, 255);
     top: 70px;
     left: 90%;
-    
 }
 
 .base3 {
@@ -80,8 +79,7 @@ left: 70px
     background-color: rgb(4, 0, 255);
     top: 65%;
     left: 20%
-    
-    }
+}
 
 .base4 { 
     position: absolute;   
@@ -90,17 +88,16 @@ left: 70px
     background-color: rgb(4, 0, 255);
     top: 65%;
     left: 75%;
-        
-    }
+}
 
-    #stormCloud {
-        position: absolute;
-        width: 70px;
-        height: 70px;
-        background-image: url("./stormcloud.gif"); /* Agrega la imagen de la nube */
-        background-size: cover;
-        top: 10px;
-        left: 10px;
-        z-index: 1;
-    }
+#stormCloud {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-image: url("resources/stormcloud.gif"); /* Agrega la imagen de la nube */
+    background-size: cover;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
 
