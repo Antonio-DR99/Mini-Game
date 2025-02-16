@@ -34,8 +34,6 @@ main{
 
 }
 
-
-
 /* Estilos para el helicóptero */
 #helicopter {
     position: absolute;
@@ -93,5 +91,16 @@ left: 70px
     top: 65%;
     left: 75%;
         
+    }
+
+    #stormCloud {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background-image: url("./stormcloud.gif"); /* Agrega la imagen de la nube */
+        background-size: cover;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
     }
 

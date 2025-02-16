@@ -15,6 +15,7 @@ game = {
         showHelicopter();
         demoSurvivors();
         showBases();
+        showCloud();
     }
 };
 
