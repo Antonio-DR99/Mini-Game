@@ -12,8 +12,10 @@ const timer = {
         if (!timer.paused) { timer.timer -= delta; }
 
         // Funciones dependientes del tiempo
-        timer.reduceLife(delta)
-        timer.rotFood(delta)
+        timer.reduceLife(delta);
+        timer.rotFood(delta);
+        moveCloud();
+        checkCloudCollision();
 
         // Consola del desarrollador
         document.getElementById('debTimer').textContent = now;
