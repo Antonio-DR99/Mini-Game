@@ -38,19 +38,14 @@ const cloud = {
         let helicopter = document.getElementById("helicopter");
         let heliX = helicopter.offsetLeft;
         let heliY = helicopter.offsetTop;
-    
-        cloud.size = 35; 
-        let heliSize = 25;
-    
-        // Verificar si las coordenadas se superponen
-        if (cloud.posX < heliX + heliSize &&    // Verifica si el borde derecho de la nube está a la izquierda del borde derecho del helicóptero
-            cloud.posX + cloud.size > heliX &&   // Verifica si el borde izquierdo de la nube está a la derecha del borde izquierdo del helicóptero
-            cloud.posY < heliY + heliSize &&    // Verifica si el borde inferior de la nube está arriba del borde inferior del helicóptero
-            cloud.posY + cloud.size > heliY)     // Verifica si el borde superior de la nube está debajo del borde superior del helicóptero
-            {  
-            game.death();
+        let heliSize = 50;
+
+        let deltaX = cloud.posX - heliX;
+        let deltaY = cloud.posY - heliY;
+        if( deltaX < heliSize && deltaX > -heliSize ){
+            if( deltaY < heliSize && deltaY > -heliSize ){
+                game.death()
+            }
         }
     }
-    
-
 }
