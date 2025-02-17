@@ -100,6 +100,6 @@ function generateValidCoordsFor(entity) {
     return [left, top];
 }
 
-function rngWithin(min, max) {
-    return Math.random() * (max-min) + max;
+function rngSeconds(min, max) {
+    return Math.random() * (max*1000-min*1000) + max*1000;
 }

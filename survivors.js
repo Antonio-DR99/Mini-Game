@@ -8,7 +8,7 @@ function generateSurvivor() {
     entity.style.left = position[0] + 'px';
     entity.style.top = position[1] + 'px';
 
-    let rngLife = rngWithin(10000, 15000)
+    let rngLife = rngSeconds(10, 15)
 
     displayedEntities.survivors.push({
         'posX': position[0],
