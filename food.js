@@ -5,7 +5,11 @@ function foodGenerate() {
     let food = document.createElement('div');
     food.id="food" + fruitCount;
     food.classList.add("foodDiv")
+
     fruitCount++;
+
+    let foodType = Math.floor(Math.random()*3)
+    food.classList.add("type" + foodType)
 
     let foodPosition = generateValidCoordsFor('food');
     food.style.top = foodPosition[1] + 'px';
@@ -14,5 +18,6 @@ function foodGenerate() {
     main.appendChild(food);
     displayedEntities.food.push(food);
 
-    setTimeout(foodGenerate,rngSeconds(1, 3));
+    setTimeout(foodGenerate,rngSeconds(3, 6));
 }
+
