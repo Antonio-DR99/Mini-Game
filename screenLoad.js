@@ -7,6 +7,8 @@ let interval;
 function startMusica() {
     let audio = document.getElementById('audio'); 
 
+
+
     // Si la música ya se está reproduciendo, la pausamos
     if (musicaReproducida) {
         audio.pause();  // Detiene la música
@@ -21,6 +23,7 @@ function startMusica() {
 function updateLoad(){
     if (value>=100) {
         clearInterval(interval)
+        audio.pause();
     }else{
         value++
         progresLoad.value=value;
@@ -28,8 +31,11 @@ function updateLoad(){
 }
 
 function startBarra(){
+    document.querySelector('.barraCarga').style.display='block';
+
     value=0; 
     progresLoad.value=value;
+    startMusica();
     interval=setInterval(updateLoad,80);
 }
 
