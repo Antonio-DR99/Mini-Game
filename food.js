@@ -4,7 +4,7 @@ let fruitCount=0;
 function foodGenerate() {
     let food = document.createElement('div');
     food.id="food" + fruitCount;
-    food.classList.add("foodDiv")
+    food.classList.add("food")
 
     fruitCount++;
 
@@ -16,7 +16,6 @@ function foodGenerate() {
     food.style.left = foodPosition[0] + 'px';
 
     main.appendChild(food);
-    displayedEntities.food.push(food);
 
     setTimeout(foodGenerate,rngSeconds(3, 6));
 }

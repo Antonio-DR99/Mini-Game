@@ -1,8 +1,6 @@
 // Almacenamiento con los elementos creados
 const displayedEntities = {
     survivors: [],          // posX, posY, state, life, maxLife
-    food: [],
-    bases: []
 }
 
 // Información del tamaño de los elementos
@@ -12,8 +10,8 @@ const info = {
         height: 60
     },
     food: {
-        width: 40,
-        height: 40
+        width: 20,
+        height: 20
     },
     bases: {
         width: 90,

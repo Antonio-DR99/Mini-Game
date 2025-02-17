@@ -35,21 +35,20 @@ main{
 }
 
 /*Estilos comida*/
-.foodDiv{
+.food{
     position: absolute;
     width: 20px;
     height: 20px;
-}
 
-.foodDiv.type0{
-    background-color: greenyellow;
-}
-.foodDiv.type1{
-    background-color: purple;
-}
-
-.foodDiv.type2{
-    background-color: rgb(208, 230, 85);
+    &.type0{
+        background-color: greenyellow;
+    }
+    &.type1{
+        background-color: purple;
+    }
+    &.type2{
+        background-color: #ff8cec;
+    }
 }
 
 /* Estilos para el helicóptero */
