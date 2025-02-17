@@ -1,54 +1,56 @@
-let cloudX, cloudY;
-let cloudSize = 70;
-let speedX = 2;
-let speedY = 2; 
+const cloud = {
+    posX: 0,
+    posY: 0,
+    size: 70,
+    speedX: 2,
+    speedY: 2,
 
-// Función para crear la nube
-function showCloud() {
-    let stormCloud = document.createElement("div");
-    stormCloud.id = "stormCloud"; 
-    main.appendChild(stormCloud);
+    show() {
+        let stormCloud = document.createElement("div");
+        stormCloud.id = "stormCloud"; 
+        main.appendChild(stormCloud);
+    
+        // Posición inicial aleatoria
+        cloud.posX = Math.floor(Math.random() * (display.width() - cloud.size)); 
+        cloud.posY = Math.floor(Math.random() * (display.height() - cloud.size));
+    
+    },
 
-    // Posición inicial aleatoria
-    cloudX = Math.floor(Math.random() * (display.width() - cloudSize)); 
-    cloudY = Math.floor(Math.random() * (display.height() - cloudSize));
+    move() {
+        cloud.posX += cloud.speedX;
+        cloud.posY += cloud.speedY;
+        
+        // Invertir dirección si toca los bordes
+        if (cloud.posX <= 0 || cloud.posX >= display.width() - cloud.size) {
+            cloud.speedX =- cloud.speedX; // Cambiar la dirección
+        }
+    
+        if (cloud.posY <= 0 || cloud.posY >= display.height() - cloud.size) {
+            cloud.speedY =- cloud.speedY;
+        }
+    
+        // Actualizar posición
+        stormCloud.style.left = cloud.posX + "px";
+        stormCloud.style.top = cloud.posY + "px";
+    },
 
-    moveCloud(); // Iniciar el movimiento de la nube
-};
-
-function moveCloud() {
-    cloudX += speedX;
-    cloudY += speedY;
-
-    // Invertir dirección si toca los bordes
-    if (cloudX <= 0 || cloudX >= display.width() - cloudSize) {
-        speedX = -speedX; // Cambiar la dirección
+    checkCollision() {
+        let helicopter = document.getElementById("helicopter");
+        let heliX = helicopter.offsetLeft;
+        let heliY = helicopter.offsetTop;
+    
+        cloud.size = 35; 
+        let heliSize = 25;
+    
+        // Verificar si las coordenadas se superponen
+        if (cloud.posX < heliX + heliSize &&    // Verifica si el borde derecho de la nube está a la izquierda del borde derecho del helicóptero
+            cloud.posX + cloud.size > heliX &&   // Verifica si el borde izquierdo de la nube está a la derecha del borde izquierdo del helicóptero
+            cloud.posY < heliY + heliSize &&    // Verifica si el borde inferior de la nube está arriba del borde inferior del helicóptero
+            cloud.posY + cloud.size > heliY)     // Verifica si el borde superior de la nube está debajo del borde superior del helicóptero
+            {  
+            game.death();
+        }
     }
+    
 
-    if (cloudY <= 0 || cloudY >= display.height() - cloudSize) {
-        speedY = -speedY;
-    }
-
-    // Actualizar posición
-    stormCloud.style.left = cloudX + "px";
-    stormCloud.style.top = cloudY + "px";
-}
-
-// Función para verificar si la nube colisiona con el helicóptero
-function checkCloudCollision() {
-    let helicopter = document.getElementById("helicopter");
-    let heliX = helicopter.offsetLeft;
-    let heliY = helicopter.offsetTop;
-
-    let cloudSize = 35; 
-    let heliSize = 25;
-
-    // Verificar si las coordenadas se superponen
-    if (cloudX < heliX + heliSize &&    // Verifica si el borde derecho de la nube está a la izquierda del borde derecho del helicóptero
-        cloudX + cloudSize > heliX &&   // Verifica si el borde izquierdo de la nube está a la derecha del borde izquierdo del helicóptero
-        cloudY < heliY + heliSize &&    // Verifica si el borde inferior de la nube está arriba del borde inferior del helicóptero
-        cloudY + cloudSize > heliY)     // Verifica si el borde superior de la nube está debajo del borde superior del helicóptero
-        {  
-        game.death();
-    }
 }

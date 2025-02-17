@@ -14,8 +14,8 @@ const timer = {
         // Funciones dependientes del tiempo
         timer.reduceLife(delta);
         timer.rotFood(delta);
-        moveCloud();
-        checkCloudCollision();
+        cloud.move();
+        cloud.checkCollision();
 
         // Consola del desarrollador
         document.getElementById('debTimer').textContent = now;

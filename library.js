@@ -19,8 +19,8 @@ const game = {
         document.querySelector('main h1').style.display = 'none';
         showHelicopter();
         showBases();
-        showCloud();
         foodGenerate();
+        cloud.show();
         timer.enable();
         timer.tick();
 
