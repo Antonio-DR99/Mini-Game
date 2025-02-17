@@ -103,3 +103,8 @@ function generateValidCoordsFor(entity) {
 function rngSeconds(min, max) {
     return Math.random() * (max*1000-min*1000) + max*1000;
 }
+
+function rngMathInvert() {
+    if(Math.random < 0.5) return 1;
+    else return -1;
+}
