@@ -16,9 +16,12 @@ const timer = {
         timer.rotFood(delta);
         cloud.move();
         cloud.checkCollision();
-
+        if(cloud.attacking) heliData.attack();
+        // TODO: if heli healing
+        // TODO: if heli usingFuel
+        // TODO: if heli loadingFuel
+        
         // Consola del desarrollador
-        document.getElementById('debTimer').textContent = now;
         document.getElementById('debDelta').textContent = delta;
 
         // Relanzar función en el próximo fotograma

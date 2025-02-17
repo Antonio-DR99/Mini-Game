@@ -4,6 +4,7 @@ const cloud = {
     size: 70,
     speedX: 2,
     speedY: 2,
+    attacking: false,
 
     show() {
         let stormCloud = document.createElement("div");
@@ -42,8 +43,7 @@ const cloud = {
 
         let deltaX = Math.abs(cloud.posX - heliX);
         let deltaY = Math.abs(cloud.posY - heliY);
-        if( deltaX < heliSize && deltaY < heliSize ){
-            game.death()
-        }
+        if( deltaX < heliSize && deltaY < heliSize ) cloud.attacking = true;
+        else cloud.attacking = false;
     }
 }

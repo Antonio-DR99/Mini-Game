@@ -2,8 +2,19 @@ const helicopter = document.getElementById('helicopter')
 
 const heliData = {
     moving: false,
-    life: 1000,
+    life: 50,
     fuel: 10000,
+
+    attack() {
+        heliData.life -= 1.5;
+
+        if(heliData.life <= 0){
+            heliData.life = 0;
+            game.death();
+        }
+
+        document.getElementById('heliLife').textContent = heliData.life;
+    }
 }
 
 //-------------------------------------//
