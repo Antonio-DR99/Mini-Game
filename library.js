@@ -105,6 +105,6 @@ function rngSeconds(min, max) {
 }
 
 function rngMathInvert() {
-    if(Math.random < 0.5) return 1;
+    if(Math.random() < 0.5) return 1;
     else return -1;
 }
