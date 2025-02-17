@@ -32,12 +32,13 @@ function updateLoad(){
 
 function startBarra(){
     document.querySelector('button').style.display='none';
+    document.querySelector('.menu').style.display='none';
     document.querySelector('.barraCarga').style.display='block';
 
     value=0; 
     progresLoad.value=value;
     startMusica();
-    interval=setInterval(updateLoad,80);
+    interval=setInterval(updateLoad,200);
 }
 
 
