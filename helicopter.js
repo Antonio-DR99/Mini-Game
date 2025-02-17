@@ -1,6 +1,10 @@
+const helicopter = document.getElementById('helicopter')
 
-//Variables Globales: 
-let helicopterMoving=false //Varible para saber si el heli esta en movimiento
+const heliData = {
+    moving: false,
+    life: 1000,
+    fuel: 10000,
+}
 
 //-------------------------------------//
 
@@ -19,7 +23,7 @@ function showHelicopter() {
 function moveHelicopter(surId){
 
     //si el heli esta en movimiento no hacer nada 
-    if (helicopterMoving) return;
+    if (heliData.moving) return;
 
     //solo recoger supervivientes en estado normal.
     if (displayedEntities.survivors[surId].state != 'default') return;
@@ -31,7 +35,7 @@ function moveHelicopter(surId){
     helicopter.classList.remove("move","moveBack"); 
 
     // Cambiar el estado a miovimeinto
-    helicopterMoving=true; 
+    heliData.moving = true; 
 
     //mover el heli hacia el superviviente
     helicopter.style.left = displayedEntities.survivors[surId].posX +'px';
@@ -108,7 +112,7 @@ function restoreSurvivor(survivor,destinationTop,destinationLeft){
 
     survivor.style.pointerEvents="none";
     
-    helicopterMoving=false; //permitir de nuevo hacer clic al terminar el movimeinto
+    heliData.moving = false; //permitir de nuevo hacer clic al terminar el movimeinto
 
     game.survResc++;
     ui.updateScores();
