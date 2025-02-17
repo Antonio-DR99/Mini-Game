@@ -40,12 +40,10 @@ const cloud = {
         let heliY = helicopter.offsetTop;
         let heliSize = 50;
 
-        let deltaX = cloud.posX - heliX;
-        let deltaY = cloud.posY - heliY;
-        if( deltaX < heliSize && deltaX > -heliSize ){
-            if( deltaY < heliSize && deltaY > -heliSize ){
-                game.death()
-            }
+        let deltaX = Math.abs(cloud.posX - heliX);
+        let deltaY = Math.abs(cloud.posY - heliY);
+        if( deltaX < heliSize && deltaY < heliSize ){
+            game.death()
         }
     }
 }
