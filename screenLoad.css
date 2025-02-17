@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    background-image: url("resources/back1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.pantallaCarga{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contenedorIntro{
+    text-align: center;
+}
+.contenedorIntro h1{
+    font-family: 'Jersey 15';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.5em;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.contenedorIntro button{
+    font-family: 'Jersey 15';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.5em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

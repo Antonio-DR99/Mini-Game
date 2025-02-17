@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla Carga</title>
+
+    <!--Fuentes google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Tiny5&display=swap" rel="stylesheet">
+
+    <!--Hoja de estilo-->
+    <link rel="stylesheet" href="screenLoad.css">
+
+</head>
+<body>
+    <audio id="audio" src="resources/intro.mp3" loop preload="auto"></audio>
+    
+    <div class="pantallaCarga">
+        <div class="contenedorIntro">
+            <h1>LOADING...</h1>
+            <div class="barraCarga">
+                <progress id="progress" max="100" value="0"></progress>
+            </div>
+            <button onclick="startMusica(); startBarra()">START GAME</button>
+        </div>
+    </div>
+</body>
+
+<script src="screenLoad.js"></script>
+</html>
