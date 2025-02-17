@@ -2,18 +2,39 @@ const helicopter = document.getElementById('helicopter')
 
 const heliData = {
     moving: false,
+    maxLife: 50,
     life: 50,
-    fuel: 10000,
+    maxFuel: 2000,
+    fuel: 2000,
+    repairing: false,
 
     attack() {
         heliData.life -= 1.5;
-
         if(heliData.life <= 0){
             heliData.life = 0;
-            game.death();
+            game.death('broken');
         }
-
         document.getElementById('heliLife').textContent = heliData.life;
+    },
+    repair() {
+        heliData.life += 0.5;
+        if(heliData.life >= heliData.maxLife){
+            heliData.life = heliData.maxLife;
+            heliData.repairing = false;
+        }
+        document.getElementById('heliLife').textContent = heliData.life;
+    },
+    fuelUpdate(){
+        if(heliData.moving){
+            heliData.fuel -= 1;
+            if(heliData.fuel <= 0) {
+                game.death('lowFuel');
+            }
+        } else {
+            if(heliData.fuel < heliData.maxFuel) heliData.fuel += 5;
+            else heliData.fuel = heliData.maxFuel;
+        }
+        document.getElementById('heliFuel').textContent = heliData.fuel;
     }
 }
 
@@ -39,14 +60,15 @@ function moveHelicopter(surId){
     //solo recoger supervivientes en estado normal.
     if (displayedEntities.survivors[surId].state != 'default') return;
 
+    // Cambiar el estado a miovimeinto
+    heliData.moving = true; 
+    heliData.repairing = false;
+
     let helicopter = document.getElementById("helicopter"); 
     let survivor = document.getElementById(`survivor${surId}`);
 
     //resetear las animaciones
     helicopter.classList.remove("move","moveBack"); 
-
-    // Cambiar el estado a miovimeinto
-    heliData.moving = true; 
 
     //mover el heli hacia el superviviente
     helicopter.style.left = displayedEntities.survivors[surId].posX +'px';

@@ -16,10 +16,9 @@ const timer = {
         timer.rotFood(delta);
         cloud.move();
         cloud.checkCollision();
+        heliData.fuelUpdate();
         if(cloud.attacking) heliData.attack();
-        // TODO: if heli healing
-        // TODO: if heli usingFuel
-        // TODO: if heli loadingFuel
+        if(heliData.repairing) heliData.repair();
         
         // Consola del desarrollador
         document.getElementById('debDelta').textContent = delta;
