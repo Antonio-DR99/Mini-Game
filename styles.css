@@ -61,40 +61,11 @@ main{
 }
 
 /* Estilos para las bases */
-.base1 {
+.base {
     position: absolute;   
     width: 90px;
     height: 90px;
     background-color: rgb(4, 0, 255);
-    top: 70px;
-    left: 70px
-}
-
-.base2 { 
-    position: absolute;   
-    width: 90px;
-    height: 90px;
-    background-color: rgb(4, 0, 255);
-    top: 70px;
-    left: 90%;
-}
-
-.base3 {
-    position: absolute;   
-    width: 90px;
-    height: 90px;
-    background-color: rgb(4, 0, 255);
-    top: 65%;
-    left: 20%
-}
-
-.base4 { 
-    position: absolute;   
-    width: 90px;
-    height: 90px;
-    background-color: rgb(4, 0, 255);
-    top: 65%;
-    left: 75%;
 }
 
 #stormCloud {
