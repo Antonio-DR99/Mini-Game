@@ -91,7 +91,7 @@ function moveHelicopter(surId){
 function moveHelicopterBack(survivor){
     let helicopter=document.getElementById("helicopter"); 
 
-    let bases=document.querySelectorAll(".base1, .base2, .base3, .base4");
+    let bases=document.querySelectorAll(".base");
 
 
     let baseClose=null; //almacenar la base mas cercana
