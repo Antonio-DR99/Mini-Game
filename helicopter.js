@@ -80,10 +80,11 @@ function moveHelicopter(surId){
     //Ocultar al superviviente pasado 4s desde que llegue el heli
     setTimeout(function() {
         survivor.style.visibility = 'hidden';// Ocultar al superviviente después de que el helicóptero haya llegado
-    }, 4000);
+        moveHelicopterBack(survivor); 
+    }, 6000);
 
     //Esperar 4s antes de llamar a la funcion de regreso
-    setTimeout(moveHelicopterBack,4000,survivor); 
+    
 }
 
 //Funcion para mover el heli de regreso a la base mas cercana
