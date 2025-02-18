@@ -80,7 +80,7 @@ function generateValidCoordsFor(entity) {
         for(i=0; i<food.length; i++) {
             let deltaX = Math.abs(left - food[i].offsetLeft);
             let deltaY = Math.abs(top - food[i].offsetTop);
-            if(deltaX < info.food.width && deltaY < info.food.width) {
+            if(deltaX < info.survivors.width && deltaY < info.survivors.width) {
                 valid = false;
             }
         }
