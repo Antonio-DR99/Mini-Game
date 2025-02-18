@@ -15,10 +15,8 @@ const game = {
 
     start() {
         if(game.started) return
-        // graphics.render();
-        document.querySelector('main h1').style.display = 'none';
-        showHelicopter();
         showBases();
+        showHelicopter();
         foodGenerate();
         cloud.show();
         timer.enable();

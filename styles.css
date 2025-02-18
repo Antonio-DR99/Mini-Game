@@ -19,8 +19,8 @@ body{
 }
 
 main{
-    height: 75dvh;
-    width: 95dvw;
+    height: 81dvh;
+    width: 90dvw;
 
     position: relative;
     display: flex;
@@ -28,7 +28,7 @@ main{
     justify-content: center;
 
     border: 2px solid black;
-    border-radius: 32px;
+    border-radius: 4px;
     overflow: hidden;
     background-image: url("resources/background.png");
     background-size: cover;

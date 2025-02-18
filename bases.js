@@ -1,8 +1,8 @@
 const basesGeneration = [
-    [0.04 , 0.1],
-    [0.2 , 0.8],
-    [0.9 , 0.2],
-    [0.8 , 0.7],
+    [0.08 , 0.1],
+    [0.15 , 0.75],
+    [0.92 , 0.18],
+    [0.8 , 0.8],
 ]
 
 // Se cogen todas las bases y se muestran cuando se le da al boton start

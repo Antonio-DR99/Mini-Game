@@ -35,6 +35,11 @@ const heliData = {
             else heliData.fuel = heliData.maxFuel;
         }
         document.getElementById('heliFuel').textContent = heliData.fuel;
+    },
+    startRepair(){
+        if(!heliData.moving && heliData.fuel == heliData.maxFuel){
+            heliData.repairing = true;
+        }
     }
 }
 
@@ -42,11 +47,13 @@ const heliData = {
 
 //Crear el heli en la pantalla 
 function showHelicopter() {
-    let hel=document.createElement('div'); 
-    hel.id="helicopter"; 
+    let hel = document.createElement('div'); 
+    hel.id = "helicopter"; 
 
-    hel.style.top=`40px`
-    hel.style.left=`40px`
+    let rng = Math.floor(Math.random()*4);
+    let base = document.getElementById(`base${rng}`);
+    hel.style.top= base.style.top;
+    hel.style.left= base.style.left;
 
     main.appendChild(hel);
 }

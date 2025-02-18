@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="animations.css">
 
 </head>
-<body>
+<body onload="game.start()">
     <div id="statsView">
         <p>Abducciones: </p>
         <p id="statAbd">0</p>
@@ -28,12 +28,10 @@
         <p id="debDelta" style="font-weight: bold;">0</p>
     </div>
 
-    <main>
-        <h1>Pulsa Start</h1>
-    </main>
+    <main></main>
 
     <div id="buttonsView">
-        <button onclick="game.start();">Start</button>
+        <button onclick="heliData.startRepair()">Reparar helicóptero</button>
 
     </div>
 
