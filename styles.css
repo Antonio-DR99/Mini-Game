@@ -74,6 +74,27 @@ main{
     background-repeat: no-repeat;
     transition: top 5s ease, left 5s ease, transform 5s ease;
     z-index: 2;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 150, 0.8));
+}
+/* Haz de luz */
+#helicopter::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 50px;
+    height: 80px;
+    background: rgba(0, 255, 150, 0.3);
+    filter: blur(15px);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Activa el haz de luz cuando el OVNI se mueve */
+.move::after {
+    opacity: 1;
 }
 
 .cow{
