@@ -63,8 +63,8 @@ function generateValidCoordsFor(entity) {
 
     do {
         valid = true;
-        left = Math.random() * display.width() - target.width;
-        top = Math.random() * display.height() - target.height;
+        left = Math.random() * (display.width() - target.width);
+        top = Math.random() * (display.height() - target.height) + 15;
 
         // Collide with cows
         for(i=0; i<cowsData.length; i++) {

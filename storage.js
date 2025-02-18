@@ -5,7 +5,7 @@ const cowsData = [] // posX, posY, state, life, maxLife
 const info = {
     cows: {
         width: 60,
-        height: 50
+        height: 80
     },
     food: {
         width: 20,
