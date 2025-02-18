@@ -8,7 +8,7 @@ function generateCow() {
     entity.style.left = position[0] + 'px';
     entity.style.top = position[1] + 'px';
 
-    let rngLife = rngSeconds(30, 45)
+    let rngLife = rngSeconds(20, 50)
     
     let progress = document.createElement('progress')
     progress.id = 'lifeBar' + numId;
@@ -38,7 +38,6 @@ function killCow(who){
     let node = document.getElementById(`cow${who}`);
     node.classList.add('dead');
     setTimeout(hideCow, 6000, node)
-    // display kill state
 }
 
 function hideCow(node) {
