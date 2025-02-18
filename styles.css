@@ -118,7 +118,11 @@ main{
     position: absolute;   
     width: 80px;
     height: 80px;
-    background-color: rgb(4, 0, 255);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("resources/base/labase.png");
+
 }
 
 #stormCloud {
