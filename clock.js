@@ -15,7 +15,7 @@ const timer = {
 
         // Funciones dependientes del tiempo
         timer.reduceLife(delta);
-        timer.rotFood(delta);
+        timer.rotFood();
         cloud.move();
         cloud.checkCollision();
         heliData.fuelUpdate();
@@ -48,8 +48,17 @@ const timer = {
         }
     },
 
-    rotFood(delta) {
+    rotFood() {
 
+        for(let i=0;i<foods.length;i++){
+            if(foods[i].status == 'normal'){
+                if (foods[i].life > 0){
+                    foods[i].life -= 1 ;
+                }else{
+                    foodDelete(i)
+                }
+            }
+        }
     },
 
     disable() { timer.ticking = false; timer.paused = false; },

@@ -13,7 +13,7 @@ function foodGenerate() {
     foods.push({
         'id': fruitCount,
         'life': 900,
-        'type': foodType,
+        'status': 'normal'
     })
 
     fruitCount++;
@@ -23,8 +23,12 @@ function foodGenerate() {
     food.style.left = foodPosition[0] + 'px';
 
     main.appendChild(food);
-
     setTimeout(foodGenerate,rngSeconds(3, 6));
 }
 
 
+function foodDelete(id){
+    let food =document.getElementById('food'+id)
+    food.remove()
+    foods[id].status='invisible'
+}
