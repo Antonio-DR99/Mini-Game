@@ -39,26 +39,39 @@ main{
 /*Estilos comida*/
 .food{
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
     &.type0{
-        background-color: greenyellow;
+        background-image: url("resources/food/appleGood.png");
+        &.putrid{
+            background-image: url("resources/food/appleBad.png");
+        }
     }
     &.type1{
-        background-color: purple;
+        background-image: url("resources/food/carrotGood.png");
+        &.putrid{
+            background-image: url("resources/food/carrotBad.png");}
     }
     &.type2{
-        background-color: #ff8cec;
+        background-image: url("resources/food/aguacateGood.png");
+        &.putrid{
+            background-image: url("resources/food/aguacateBad.png");}
     }
 }
 
 /* Estilos para el helicóptero */
 #helicopter {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 55px;
     background-image: url("resources/ovni.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: top 5s ease, left 5s ease, transform 5s ease;
     z-index: 2;
 }
@@ -82,8 +95,8 @@ main{
 /* Estilos para las bases */
 .base {
     position: absolute;   
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     background-color: rgb(4, 0, 255);
 }
 

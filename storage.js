@@ -8,11 +8,11 @@ const info = {
         height: 80
     },
     food: {
-        width: 20,
-        height: 20
+        width: 30,
+        height: 30
     },
     bases: {
-        width: 90,
-        height: 90
+        width: 80,
+        height: 80
     }
 }
