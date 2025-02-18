@@ -38,7 +38,7 @@ function startBarra(){
     value=0; 
     progresLoad.value=value;
     startMusica();
-    interval=setInterval(updateLoad,200);
+    interval=setInterval(updateLoad,80);
 }
 
 
