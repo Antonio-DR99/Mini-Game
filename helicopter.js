@@ -51,36 +51,36 @@ function showHelicopter() {
     main.appendChild(hel);
 }
 
-//Funcion para mover el heli hacia el superviviente
-function moveHelicopter(surId){
+//Funcion para mover el heli hacia la vaca
+function moveHelicopter(cowId){
 
     //si el heli esta en movimiento no hacer nada 
     if (heliData.moving) return;
 
-    //solo recoger supervivientes en estado normal.
-    if (displayedEntities.survivors[surId].state != 'default') return;
+    //solo recoger vacas en estado normal.
+    if (cowsData[cowId].state != 'default') return;
 
     // Cambiar el estado a miovimeinto
     heliData.moving = true; 
     heliData.repairing = false;
 
     let helicopter = document.getElementById("helicopter"); 
-    let survivor = document.getElementById(`survivor${surId}`);
+    let cow = document.getElementById(`cow${cowId}`);
 
     //resetear las animaciones
     helicopter.classList.remove("move","moveBack"); 
 
-    //mover el heli hacia el superviviente
-    helicopter.style.left = displayedEntities.survivors[surId].posX +'px';
-    helicopter.style.top = displayedEntities.survivors[surId].posY +'px';
+    //mover el heli hacia la vaca
+    helicopter.style.left = cowsData[cowId].posX +'px';
+    helicopter.style.top = cowsData[cowId].posY +'px';
     
     //agregamos la calse de animacion para el heli
     helicopter.classList.add("move");
 
-    //Ocultar al superviviente pasado 4s desde que llegue el heli
+    //Ocultar la vaca pasado 4s desde que llegue el heli
     setTimeout(function() {
-        survivor.style.visibility = 'hidden';// Ocultar al superviviente después de que el helicóptero haya llegado
-        moveHelicopterBack(survivor); 
+        cow.style.visibility = 'hidden';// Ocultar la vaca después de que el helicóptero haya llegado
+        moveHelicopterBack(cow); 
     }, 6000);
 
     //Esperar 4s antes de llamar a la funcion de regreso
@@ -88,7 +88,7 @@ function moveHelicopter(surId){
 }
 
 //Funcion para mover el heli de regreso a la base mas cercana
-function moveHelicopterBack(survivor){
+function moveHelicopterBack(cow){
     let helicopter=document.getElementById("helicopter"); 
 
     let bases=document.querySelectorAll(".base");
@@ -130,25 +130,25 @@ function moveHelicopterBack(survivor){
     //Activamos la animacion de regreso
     helicopter.classList.add("moveBack"); 
 
-    //Hacer visible el superviviente despues de 4 segundos de que el heli regrese
+    //Hacer visible la vaca despues de 4 segundos de que el heli regrese
     setTimeout(function() {
-        restoreSurvivor(survivor, destinationTop, destinationLeft);
+        restoreCow(cow, destinationTop, destinationLeft);
     }, 4000);
 }
 
-//Funcion para mostrar al superviviente en la base correspondiente
-function restoreSurvivor(survivor,destinationTop,destinationLeft){
-    survivor.style.visibility="visible"; //mostramos al superviviente
+//Funcion para mostrar la vaca en la base correspondiente
+function restoreCow(cow,destinationTop,destinationLeft){
+    cow.style.visibility="visible"; //mostramos la vaca
 
-    //Mover al superviviente a la base en las coordenadas de destino 
-    survivor.style.top=destinationTop+"px";
-    survivor.style.left=destinationLeft+"px";
+    //Mover la vaca a la base en las coordenadas de destino 
+    cow.style.top=destinationTop+"px";
+    cow.style.left=destinationLeft+"px";
 
-    survivor.style.pointerEvents="none";
+    cow.style.pointerEvents="none";
     
     heliData.moving = false; //permitir de nuevo hacer clic al terminar el movimeinto
 
-    game.survResc++;
+    game.cowsAbd++;
     ui.updateScores();
 }
 

@@ -28,12 +28,12 @@ const timer = {
     },
 
     reduceLife(delta) {
-        for(i=0; i<displayedEntities.survivors.length ; i++){
-            if(displayedEntities.survivors[i].state == 'default'){
-                displayedEntities.survivors[i].life -= delta;
-                if(displayedEntities.survivors[i].life < 0){
-                    killSurvivor(i);
-                    game.survDead++;
+        for(i=0; i<cowsData.length ; i++){
+            if(cowsData[i].state == 'default'){
+                cowsData[i].life -= delta;
+                if(cowsData[i].life < 0){
+                    killCow(i);
+                    game.cowsDie++;
                     ui.updateScores();
                 }
             }

@@ -9,9 +9,9 @@ const display = {
 // INFORMACIÓN SOBRE EL JUEGO
 const game = {
     started: false,
-    survGene: 0,
-    survResc: 0,
-    survDead: 0,
+    cowsGen: 0,
+    cowsAbd: 0,
+    cowsDie: 0,
 
     start() {
         if(game.started) return
@@ -25,9 +25,9 @@ const game = {
         timer.tick();
 
         // Inicializar valores necesarios
-        game.survGene = 0,
-        game.survResc = 0,
-        game.survDead = 0,
+        game.cowsGen = 0,
+        game.cowsAbd = 0,
+        game.cowsDie = 0,
         game.started = true;
     },
 
@@ -39,8 +39,8 @@ const game = {
 
 const ui = {
     updateScores() {
-        document.getElementById('statAbd').textContent = game.survResc;
-        document.getElementById('statDea').textContent = game.survDead;
+        document.getElementById('statAbd').textContent = game.cowsAbd;
+        document.getElementById('statDea').textContent = game.cowsDie;
     }
 }
 
@@ -55,7 +55,7 @@ function bruteforceTest() {
 function generateValidCoordsFor(entity) {
 
     let target;
-    if (entity == 'survivor') target = info.survivors;
+    if (entity == 'cow') target = info.cows;
     if (entity == 'food') target = info.food;
 
     let valid, left, top;
@@ -66,11 +66,11 @@ function generateValidCoordsFor(entity) {
         left = Math.random() * display.width() - target.width;
         top = Math.random() * display.height() - target.height;
 
-        // Collide with survivors
-        for(i=0; i<displayedEntities.survivors.length; i++) {
-            let deltaX = Math.abs(left - displayedEntities.survivors[i].posX);
-            let deltaY = Math.abs(top - displayedEntities.survivors[i].posY);
-            if(deltaX < info.survivors.width && deltaY < info.survivors.height) {
+        // Collide with cows
+        for(i=0; i<cowsData.length; i++) {
+            let deltaX = Math.abs(left - cowsData[i].posX);
+            let deltaY = Math.abs(top - cowsData[i].posY);
+            if(deltaX < info.cows.width && deltaY < info.cows.height) {
                 valid = false;
             }
         }
@@ -80,7 +80,7 @@ function generateValidCoordsFor(entity) {
         for(i=0; i<food.length; i++) {
             let deltaX = Math.abs(left - food[i].offsetLeft);
             let deltaY = Math.abs(top - food[i].offsetTop);
-            if(deltaX < info.survivors.width && deltaY < info.survivors.width) {
+            if(deltaX < info.cows.width && deltaY < info.cows.width) {
                 valid = false;
             }
         }

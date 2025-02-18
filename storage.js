@@ -1,13 +1,11 @@
 // Almacenamiento con los elementos creados
-const displayedEntities = {
-    survivors: [],          // posX, posY, state, life, maxLife
-}
+const cowsData = [] // posX, posY, state, life, maxLife
 
 // Información del tamaño de los elementos
 const info = {
-    survivors: {
-        width: 40,
-        height: 60
+    cows: {
+        width: 60,
+        height: 50
     },
     food: {
         width: 20,
