@@ -4,8 +4,8 @@ const heliData = {
     moving: false,
     maxLife: 50,
     life: 50,
-    maxFuel: 2000,
-    fuel: 2000,
+    maxFuel: 1400,
+    fuel: 1400,
     repairing: false,
 
     attack() {
@@ -59,6 +59,7 @@ function moveHelicopter(cowId){
 
     //solo recoger vacas en estado normal.
     if (cowsData[cowId].state != 'default') return;
+    cowsData[cowId].state = 'rescued';
 
     // Cambiar el estado a miovimeinto
     heliData.moving = true; 
@@ -138,16 +139,17 @@ function moveHelicopterBack(cow){
 
 //Funcion para mostrar la vaca en la base correspondiente
 function restoreCow(cow,destinationTop,destinationLeft){
-    cow.style.visibility="visible"; //mostramos la vaca
-
+    cow.style.visibility="visible"; //mostramos la vacal
+    
     //Mover la vaca a la base en las coordenadas de destino 
     cow.style.top=destinationTop+"px";
     cow.style.left=destinationLeft+"px";
-
+    
     cow.style.pointerEvents="none";
     
     heliData.moving = false; //permitir de nuevo hacer clic al terminar el movimeinto
-
+    
+    setTimeout(hideCow, 6000, cow);
     game.cowsAbd++;
     ui.updateScores();
 }

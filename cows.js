@@ -35,6 +35,12 @@ function generateCow() {
 
 function killCow(who){
     cowsData[who].state = 'dead';
-    console.log('survivor' + who + ' ha muerto.')
+    let node = document.getElementById(`cow${who}`);
+    node.classList.add('dead');
+    setTimeout(hideCow, 6000, node)
     // display kill state
+}
+
+function hideCow(node) {
+    node.remove();
 }
