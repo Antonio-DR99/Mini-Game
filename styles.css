@@ -30,7 +30,9 @@ main{
     border: 2px solid black;
     border-radius: 32px;
     overflow: hidden;
-    background-color: lightgreen;
+    background-image: url("resources/background.png");
+    background-size: cover;
+    background-position: center;
 
 }
 
