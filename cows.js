@@ -8,7 +8,13 @@ function generateCow() {
     entity.style.left = position[0] + 'px';
     entity.style.top = position[1] + 'px';
 
-    let rngLife = rngSeconds(90, 120)
+    let rngLife = rngSeconds(30, 45)
+    
+    let progress = document.createElement('progress')
+    progress.id = 'lifeBar' + numId;
+    progress.className = 'lifeBar';
+    progress.max = 100;
+    progress.value = 100;
 
     cowsData.push({
         'posX': position[0],
@@ -22,6 +28,7 @@ function generateCow() {
         moveHelicopter(numId);  // Llamar a la función para mover el heli
     });
     
+    entity.appendChild(progress)
     main.appendChild(entity);
     game.cowsGen++;
 }

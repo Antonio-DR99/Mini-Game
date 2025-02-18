@@ -1,3 +1,5 @@
+let fpsShow = 0;
+
 const timer = {
     ticking: false,
     paused: false,
@@ -21,7 +23,12 @@ const timer = {
         if(heliData.repairing) heliData.repair();
         
         // Consola del desarrollador
-        document.getElementById('debDelta').textContent = delta;
+        if(fpsShow == 3) {
+            document.getElementById('debDelta').textContent = Math.floor(1000/delta);
+            fpsShow = 0
+        } else {
+            fpsShow++
+        }
 
         // Relanzar función en el próximo fotograma
         requestAnimationFrame(timer.tick);
@@ -31,6 +38,7 @@ const timer = {
         for(i=0; i<cowsData.length ; i++){
             if(cowsData[i].state == 'default'){
                 cowsData[i].life -= delta;
+                document.getElementById(`lifeBar${i}`).value = (cowsData[i].life * 100)/cowsData[i].maxLife;
                 if(cowsData[i].life < 0){
                     killCow(i);
                     game.cowsDie++;

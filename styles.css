@@ -69,6 +69,14 @@ main{
     z-index: 1;
 }
 
+.lifeBar{
+    position: relative;
+    bottom: 20px;
+    left: -5px;
+    width: 70px;
+    height: 20px;
+}
+
 /* Estilos para las bases */
 .base {
     position: absolute;   
