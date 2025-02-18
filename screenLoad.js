@@ -1,24 +1,10 @@
-
-musicaReproducida=false;
+const audio = document.getElementById('audio'); 
+const progressLoad=document.getElementById('progress');
+let musicaReproducida=false;
 let value=0; 
-let progresLoad=document.getElementById('progress');
 let interval; 
+let indice = 0; // Contador para seguir el orden de los mensajes
 
-function startMusica() {
-    let audio = document.getElementById('audio'); 
-
-
-
-    // Si la música ya se está reproduciendo, la pausamos
-    if (musicaReproducida) {
-        audio.pause();  // Detiene la música
-    } else {
-        audio.play();   // Reproduce la música
-    }
-    // Cambiamos el estado de la variable
-    musicaReproducida = !musicaReproducida; 
-
-}
 
 function updateLoad(){
     if (value>=100) {
@@ -26,7 +12,7 @@ function updateLoad(){
         audio.pause();
     }else{
         value++
-        progresLoad.value=value;
+        progressLoad.value=value;
     }
 }
 
@@ -36,8 +22,8 @@ function startBarra(){
     document.querySelector('.barraCarga').style.display='block';
 
     value=0; 
-    progresLoad.value=value;
-    startMusica();
+    progressLoad.value=value;
+    audio.play();  
     interval=setInterval(updateLoad,80);
 }
 
@@ -50,8 +36,6 @@ let dialogo=[
     "¡Nuevo objetivo! Si un superviviente necesita comida, mueve el helicóptero hacia él. ¡Pero ten cuidado, el tiempo es limitado!",
     "¡Piloto, atención! Una tormenta se acerca. Si te cruzas con ella, el helicóptero podría quedar fuera de servicio. ¡Evítala a toda costa!",
 ];
-
-let indice = 0; // Contador para seguir el orden de los mensajes
 
 function mostrarDialogo() {
     let bocadillo = document.getElementById('bocadillo');
