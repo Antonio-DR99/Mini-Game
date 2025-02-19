@@ -1,7 +1,7 @@
 const cloud = {
     posX: 0,
     posY: 0,
-    size: 70,
+    size: 110,
     speedX: 2,
     speedY: 2,
     attacking: false,
