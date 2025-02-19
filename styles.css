@@ -128,6 +128,7 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("resources/base/labase.png");
+    filter: drop-shadow(0 0 20px rgba(252, 253, 253, 0.8));
 
 }
 
