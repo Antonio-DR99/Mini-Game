@@ -34,7 +34,7 @@ function foodDelete(id){
 }
 
 
-function eatFood(cowId,){
+function eatFood(cowId){
 
         let cow = document.getElementById('cow'+cowId);
         
@@ -70,11 +70,11 @@ function eatFood(cowId,){
         cowsData[cowId].posX = foodClose.offsetLeft;
         cowsData[cowId].posY = foodClose.offsetTop;
 
+        cow.classList.add("movecow");
+
         setTimeout(function() {
             foodClose.style.visibility = 'hidden';
-            foodDelete(foodClose.id.replace('food', ''));
+            cow.classList.remove("movecow");
         }, 4000);
-
-        
 
 }

@@ -49,3 +49,29 @@
 .moveBack{
     animation: moveHelicopterBack 3s ease-in-out forwards;
 }
+
+/* Definir animación de movimiento*/
+@keyframes moveCowToFood {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.movecow {
+  animation: moveCowToFood 3s ease-in-out forwards;
+}
