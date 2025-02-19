@@ -103,7 +103,7 @@ main{
 
 .cow{
     position: absolute;
-    background-image: url("resources/vacas/v4.png");
+    background-image: url("resources/vacas/vaca4.png");
     width: 60px;
     height: 50px;
     background-size: contain;
@@ -113,7 +113,7 @@ main{
     transition: top 3s ease, left 3s ease, transform 3s ease;
     cursor: url("resources/cursor/cursor_pointer.png"),auto;
     &.dead{
-        background-image: url("resources/vacas/3.png");
+        background-image: url("resources/vacas/vaca3.png");
     }
     &.abduced{
         transition: 0s;
