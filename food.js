@@ -32,3 +32,41 @@ function foodDelete(id){
     food.remove()
     foods[id].status='invisible'
 }
+
+// function eatFood(cowId){
+
+//         let cow = document.getElementById('cow'+cowId);
+        
+//         let foodElements = document.querySelectorAll('.food');
+
+//         let foodClose = null;
+//         let minDistance=Infinity;
+
+//         //obetenemos la posicon de la vaca
+//         let cowTop=cow.offsetTop;
+//         let cowLeft=cow.offsetLeft;
+
+//         //Buscamos la comida mas cercana
+//         for (let i=0; i<foodElements.length; i++){
+//             let foodElement=foodElements[i]; 
+//             let foodTop=foodElement.offsetTop; 
+//             let foodLeft=foodElement.offsetLeft; 
+            
+//             //almacenamos la distacia entre la vaca y la comida
+//             let distace=calculateDistance(cowLeft, cowTop, foodLeft, foodTop);
+
+//             if (distace<minDistance) {
+//                 minDistance=distace; 
+//                 foodClose=foodElement;
+//             }
+//         }
+        
+//         //Mover el vaca a la fruta
+//         cow.style.top = foodClose.offsetTop + 'px';
+//         cow.style.left = foodClose.offsetLeft + 'px';
+
+//         setTimeout(function() {
+//             foodClose.style.visibility = 'hidden';
+//         }, 6000);
+
+// }
