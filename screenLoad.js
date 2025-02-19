@@ -10,6 +10,7 @@ function updateLoad(){
     if (value>=100) {
         clearInterval(interval)
         audio.pause();
+        window.location.href = "index.html";
     }else{
         value++
         progressLoad.value=value;
