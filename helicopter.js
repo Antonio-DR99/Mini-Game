@@ -153,6 +153,7 @@ function restoreCow(cow,destinationTop,destinationLeft){
     //Mover la vaca a la base en las coordenadas de destino 
     cow.style.top=destinationTop+"px";
     cow.style.left=destinationLeft+"px";
+    cow.classList.add('abduced');
     
     cow.style.pointerEvents="none";
     

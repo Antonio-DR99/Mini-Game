@@ -110,6 +110,9 @@ main{
     &.dead{
         background-image: url("resources/vacas/3.png");
     }
+    &.abduced{
+        transition: 0s;
+    }
 }
 
 .lifeBar{
