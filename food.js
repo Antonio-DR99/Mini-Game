@@ -66,8 +66,15 @@ function eatFood(cowId){
         cow.style.top = foodClose.offsetTop + 'px';
         cow.style.left = foodClose.offsetLeft + 'px';
 
+         // Actualizar las coordenadas de la vaca en cowsData
+        cowsData[cowId].posX = foodClose.offsetLeft;
+        cowsData[cowId].posY = foodClose.offsetTop;
+
         setTimeout(function() {
             foodClose.style.visibility = 'hidden';
-        }, 6000);
+            cowsData[cowId].life+=40;
+        }, 4000);
+
+        
 
 }
