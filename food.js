@@ -34,7 +34,7 @@ function foodDelete(id){
 }
 
 
-function eatFood(cowId){
+function eatFood(cowId,){
 
         let cow = document.getElementById('cow'+cowId);
         
@@ -66,13 +66,13 @@ function eatFood(cowId){
         cow.style.top = foodClose.offsetTop + 'px';
         cow.style.left = foodClose.offsetLeft + 'px';
 
-         // Actualizar las coordenadas de la vaca en cowsData
+        // Actualizar las coordenadas de la vaca en cowsData
         cowsData[cowId].posX = foodClose.offsetLeft;
         cowsData[cowId].posY = foodClose.offsetTop;
 
         setTimeout(function() {
             foodClose.style.visibility = 'hidden';
-            cowsData[cowId].life+=40;
+            foodDelete(foodClose.id.replace('food', ''));
         }, 4000);
 
         
