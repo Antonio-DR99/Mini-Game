@@ -106,8 +106,12 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
+    transition: top 3s ease, left 3s ease, transform 3s ease;
     &.dead{
         background-image: url("resources/vacas/3.png");
+    }
+    &.abduced{
+        transition: 0s;
     }
 }
 
