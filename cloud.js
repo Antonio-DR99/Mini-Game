@@ -54,7 +54,6 @@ const cloud = {
     },
 
     updateRotation() {
-        // Calcular ángulo basado en la dirección de movimiento
         cloud.angle = Math.atan2(cloud.speedY, cloud.speedX) * (180 / Math.PI);
     },
     checkCollision() {

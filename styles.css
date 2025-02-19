@@ -9,6 +9,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: url("resources/cursor/cursor.png"),auto;
 }
 
 #statsView{
@@ -33,7 +34,6 @@ main{
     background-image: url("resources/background.png");
     background-size: cover;
     background-position: center;
-
 }
 
 /*Estilos comida*/
@@ -44,6 +44,8 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: url("resources/cursor/cursor_pointer.png"),auto;
+    
 
     &.type0{
         background-image: url("resources/food/appleGood.png");
@@ -75,6 +77,8 @@ main{
     transition: top 5s ease, left 5s ease, transform 5s ease;
     z-index: 2;
     filter: drop-shadow(0 0 15px rgba(0, 255, 150, 0.8));
+    cursor: url("resources/cursor/cursor_pointer.png"),auto;
+    
 }
 /* Haz de luz */
 #helicopter::after {
@@ -107,6 +111,7 @@ main{
     background-repeat: no-repeat;
     z-index: 1;
     transition: top 3s ease, left 3s ease, transform 3s ease;
+    cursor: url("resources/cursor/cursor_pointer.png"),auto;
     &.dead{
         background-image: url("resources/vacas/3.png");
     }
