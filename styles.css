@@ -140,7 +140,7 @@ main{
     position: absolute;
     width: 110px;
     height: 110px;
-    background-image: url("resources/meteorito.gif"); /* Agrega la imagen de la nube */
+    background-image: url("resources/meteorito2.gif"); /* Agrega la imagen de la nube */
     background-size: cover;
     top: 10px;
     left: 10px;
