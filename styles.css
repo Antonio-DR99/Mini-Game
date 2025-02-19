@@ -134,9 +134,9 @@ main{
 
 #stormCloud {
     position: absolute;
-    width: 110px;
-    height: 110px;
-    background-image: url("resources/Bola_de_Llamas.gif"); /* Agrega la imagen de la nube */
+    width: 145px;
+    height: 100px;
+    background-image: url("resources/meteorito.gif"); /* Agrega la imagen de la nube */
     background-size: cover;
     top: 10px;
     left: 10px;
