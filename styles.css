@@ -107,7 +107,7 @@ main{
     background-repeat: no-repeat;
     z-index: 1;
     &.dead{
-        background-image: url("resources/vacas/v3.png");
+        background-image: url("resources/vacas/3.png");
     }
 }
 
