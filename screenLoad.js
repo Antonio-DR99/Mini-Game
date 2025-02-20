@@ -30,7 +30,7 @@ function startBarra(){
     value=0; 
     progressLoad.value=value;
     audio.play();  
-    interval=setInterval(updateLoad,80);
+    interval=setInterval(updateLoad,1); // default is 80!
 }
 
 
@@ -64,5 +64,5 @@ function mostrarDialogo() {
 window.onload = function() {
     document.getElementById("statsView").style.display = "none";
     document.getElementById("buttonsView").style.display = "none";
-    // document.querySelector("main").style.display = "none";
+    document.querySelector("main").style.display = "none";
 };
