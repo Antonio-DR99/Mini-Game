@@ -43,14 +43,14 @@ const timer = {
             }
         }
         if(timer.genTicks % 400 == 0){
-            if(Math.random() < 0.35){
+            if(Math.random() < 0.5){
                 generateCow();
                 if(Math.random() < 0.15){
                     generateCow();
                 }
             }
         }
-        if(timer.genTicks % 500 == 0 && Math.random() < 0.6) foodGenerate();
+        if(timer.genTicks % 500 == 0 && Math.random() < 0.65) foodGenerate();
         timer.genTicks++;
     },
 
