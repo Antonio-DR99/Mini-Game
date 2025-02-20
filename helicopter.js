@@ -61,11 +61,6 @@ function showHelicopter() {
 //Funcion para mover el heli hacia la vaca
 function moveHelicopter(cowId){
 
-    //si el heli esta en movimiento no hacer nada 
-    if (heliData.moving) {
-        eatFood(cowId);
-        return;} 
-
     //solo recoger vacas en estado normal.
     if (cowsData[cowId].state != 'default') return;
     cowsData[cowId].state = 'rescued';
