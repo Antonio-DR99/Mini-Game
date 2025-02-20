@@ -34,9 +34,9 @@ const game = {
         alert('Game Over') // Solución temporal
         game.started = false;
 
-        timer.disable()
         removeHelicopter()
         removeAllCows()
+        timer.disable()
     }
 };
 

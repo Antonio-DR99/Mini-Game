@@ -168,7 +168,7 @@ function calculateDistance(x1,y1,x2,y2){
 
 //Funcion para eliminar el heli
 
-function removeHelicepter(){
+function removeHelicopter(){
     let helicopter=document.getElementById('helicopter'); 
 
     if (helicopter) {

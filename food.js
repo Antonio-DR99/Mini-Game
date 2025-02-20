@@ -79,6 +79,11 @@ function eatFood(cowId){
         setTimeout(function() {
             foodClose.style.visibility = 'hidden';
             cow.classList.remove("movecow");
+            cowHeal(cowId);
         }, 4000);
+}
 
+function cowHeal(who) {
+    cowsData[who].life += rngSeconds(5, 10);
+    if(cowsData[who].life > cowsData[who].maxLife) cowsData[who].life = cowsData[who].maxLife;
 }

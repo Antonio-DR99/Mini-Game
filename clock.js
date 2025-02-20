@@ -42,7 +42,7 @@ const timer = {
                 generateCow();
             }
         }
-        if(timer.genTicks % 200 == 0){
+        if(timer.genTicks % 400 == 0){
             if(Math.random() < 0.35){
                 generateCow();
                 if(Math.random() < 0.15){
@@ -50,7 +50,7 @@ const timer = {
                 }
             }
         }
-        if(timer.genTicks % 250 == 0 && Math.random() < 0.6) foodGenerate();
+        if(timer.genTicks % 500 == 0 && Math.random() < 0.6) foodGenerate();
         timer.genTicks++;
     },
 
