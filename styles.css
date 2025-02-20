@@ -185,5 +185,7 @@ main{
     top: 10px;
     left: 10px;
     z-index: 10;
+    transition: height 0.5s, width 0.5s;
+    transition-timing-function: steps(3, end);
 }
 
