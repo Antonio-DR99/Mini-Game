@@ -12,6 +12,8 @@ const cloud = {
         let stormCloud = document.createElement("div");
         stormCloud.id = "stormCloud"; 
         main.appendChild(stormCloud);
+        cloud.speedX = 2;
+        cloud.speedY = 2;
     
         // Posición inicial aleatoria
         cloud.posX = Math.floor(Math.random() * (display.width() - cloud.size)); 
@@ -74,7 +76,12 @@ const cloud = {
             cloud.speedY = ((Math.random()*3)+1)*rngMathInvert()
             cloud.updateRotation();
         }
+    },
+
+    disable(){
+       stormCloud.remove();
     }
+
 }
 
     

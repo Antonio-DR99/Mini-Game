@@ -61,4 +61,5 @@ function removeAllCows() {
     for (i=0; i<cowsData.length; i++){
         if(cowsData[i].state == 'default') killCow(i, true);
     }
+    cowsData = [];
 }
