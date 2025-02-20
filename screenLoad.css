@@ -72,34 +72,37 @@ progress {
 }
 
 /* Estilo interno de la barra en Chrome y navegadores compatibles */
-progress::-webkit-progress-bar {
-    background: black; 
-}
+.barraCarga{
 
-progress::-webkit-progress-value {
-    background: repeating-linear-gradient(
-        -45deg,
-        #00ffcc,
-        #00ffcc 10px,
-        #004466 10px,
-        #004466 20px
-    );
-    border-right: 4px solid #00ffcc;
-    transition: width 0.1s ease-in-out;
+    progress::-webkit-progress-bar {
+        background: black; 
+    }
+    
+    progress::-webkit-progress-value {
+        background: repeating-linear-gradient(
+            -45deg,
+            #00ffcc,
+            #00ffcc 10px,
+            #004466 10px,
+            #004466 20px
+            );
+        border-right: 4px solid #00ffcc;
+        transition: width 0.1s ease-in-out;
+    }
+        
+        /* Estilo interno para Firefox */
+    progress::-moz-progress-bar {
+        background: repeating-linear-gradient(
+            -45deg,
+            #00ffcc,
+            #00ffcc 10px,
+            #004466 10px,
+            #004466 20px
+            );
+         border-right: 4px solid #00ffcc;
+        }
+            
 }
-
-/* Estilo interno para Firefox */
-progress::-moz-progress-bar {
-    background: repeating-linear-gradient(
-        -45deg,
-        #00ffcc,
-        #00ffcc 10px,
-        #004466 10px,
-        #004466 20px
-    );
-    border-right: 4px solid #00ffcc;
-}
-
 
 
 
