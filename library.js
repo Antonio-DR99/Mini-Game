@@ -37,6 +37,7 @@ const game = {
         removeHelicopter()
         removeAllCows()
         timer.disable()
+        cloud.disable()
     }
 };
 
