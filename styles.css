@@ -286,12 +286,23 @@ main{
     position: absolute;
     width: 100px;
     height: 100px;
-    background-image: url("resources/meteorito2.gif"); /* Agrega la imagen de la nube */
+    background-image: url("resources/meteorito2.gif");
     background-size: cover;
     top: 10px;
     left: 10px;
     z-index: 10;
     transition: height 0.5s, width 0.5s;
     transition-timing-function: steps(3, end);
+}
+
+#enemy{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-image: url("resources/enemigo.gif");
+        background-size: cover;
+        top: 10px;
+        left: 10px;
+        z-index: 9;
 }
 

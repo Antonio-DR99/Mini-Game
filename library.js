@@ -40,8 +40,24 @@ const game = {
         timer.disable()
         cloud.disable()
         removeFood()
+        enemy.disable()
     }
 };
+
+
+const ui = {
+    updateScores() {
+        document.getElementById('statAbd').textContent = game.cowsAbd;
+        document.getElementById('statDea').textContent = game.cowsDie;
+    }
+}
+
+function bruteforceTest() {
+    if(!confirm('This might take a while')) return;
+    for(let i=0; i<100; i++){
+        generateSurvivor();
+    }
+}
 
 // Genera coordenadas válidas sin colisiones en las coordenadas del mapa.
 function generateValidCoordsFor(entity) {

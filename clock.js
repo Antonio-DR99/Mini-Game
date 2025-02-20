@@ -21,7 +21,17 @@ const timer = {
         heliData.fuelUpdate();
         ui.updateHud();
         if(cloud.attacking) heliData.attack();
-        if(heliData.repairing) heliData.repair();
+        if(heliData.repairing) heliData.repair();   
+
+        checkEnemies();
+
+        // Consola del desarrollador
+        if(fpsShow == 3) {
+            document.getElementById('debDelta').textContent = Math.floor(1000/delta);
+            fpsShow = 0
+        } else {
+            fpsShow++
+        }
 
         // Relanzar función en el próximo fotograma
         requestAnimationFrame(timer.tick);
