@@ -1,5 +1,9 @@
 /* Estructura principal */
 
+:root{
+    --pointer: url("resources/cursor/cursor_pointer.png"),auto;
+}
+
 body{
     margin: 0;
 
@@ -73,12 +77,44 @@ main{
     justify-content: center;
 
     border: 2px solid #375039;
+    margin-bottom: 1rem;
     border-radius: 4px;
     overflow: hidden;
     background-image: url("resources/background.png");
     background-size: cover;
     background-position: center;
 }
+
+#buttonsView{
+    display: flex;
+
+    button{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        border: lightgray 2px solid;
+        background-color: gray;
+
+        img{
+            width: 48px;
+            height: 48px;
+            filter: saturate(0);
+        }
+
+        &.enabled{
+            border-color: #e5fff6;
+            background-color: #76d2b4;
+            img{ filter: none;}
+            cursor: var(--pointer);
+        }
+    }
+}
+
+
+/* ============================================================== */
 
 /*Estilos comida*/
 .food{
