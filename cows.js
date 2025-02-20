@@ -33,11 +33,12 @@ function generateCow() {
     game.cowsGen++;
 }
 
-function killCow(who){
+function killCow(who, instant = false){
     cowsData[who].state = 'dead';
     let node = document.getElementById(`cow${who}`);
     node.classList.add('dead');
-    setTimeout(hideCow, 6000, node)
+    if(!instant) setTimeout(hideCow, 6000, node)
+    else hideCow(node);
 }
 
 function hideCow(node) {
@@ -53,5 +54,11 @@ function cowAction(cowId) {
             eatFood(cowId);
             return;
         } 
+    }
+}
+
+function removeAllCows() {
+    for (i=0; i<cowsData.length; i++){
+        if(cowsData[i].state == 'default') killCow(i, true);
     }
 }

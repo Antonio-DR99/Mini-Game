@@ -35,7 +35,8 @@ const game = {
         game.started = false;
 
         timer.disable()
-        
+        removeHelicopter()
+        removeAllCows()
     }
 };
 
