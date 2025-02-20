@@ -34,12 +34,14 @@ function startBarra(){
 
 
 let dialogo=[
-    "¡Atención, piloto! Los supervivientes están en posiciones aleatorias. ¡Prepárate para volar y rescatarlos!",
-    "El reloj está corriendo, ten cuidado con el tiempo. Si no llegas a tiempo, los supervivientes no podrá ser rescatados.",
-    "Recuerda, mientras estés en vuelo, no podrás realizar nuevas órdenes hasta que regreses a la base. ¡Haz cada movimiento contar!",
-    "Los números en tu pantalla indican cuántos supervivientes has rescatado y cuántos han caído.",
-    "¡Nuevo objetivo! Si un superviviente necesita comida, mueve el helicóptero hacia él. ¡Pero ten cuidado, el tiempo es limitado!",
-    "¡Piloto, atención! Una tormenta se acerca. Si te cruzas con ella, el helicóptero podría quedar fuera de servicio. ¡Evítala a toda costa!",
+    "¡Atención! Las vacas están en posiciones aleatorias. ¡Prepárate para volar y abducirlas!",
+    "El reloj está corriendo, ten cuidado con el tiempo. Si no llegas a tiempo, las vacas no podrán ser abducidas.",
+    "Recuerda, mientras estés en vuelo, no podrás realizar nuevas órdenes con tu ovni hasta que regreses a la base. ¡Haz cada movimiento contar!",
+    "Los números en tu pantalla indican cuántas vacas has abducido y cuántas han caído.",
+    "¡Nuevo objetivo! Si una vaca necesita comida, clica sobre ella mientas el ovni esté en vuelo. ¡Pero ten cuidado, el tiempo es limitado!",
+    "¡Atención! Un meteorito se acerca. Si te cruzas con el, el ovni podría quedar fuera de servicio. ¡Evítalo a toda costa!",
+    "Si la nave se ha dañado, puedes repararla en las bases. Pero solo cuando hayas repostado por completo.",
+    "Cuantas más vacas consigas, más puntos obtendrás. ¿Sabes que puedes hacer con ellos? ¡Exacto! Comprar mejoras."
 ];
 
 function mostrarDialogo() {

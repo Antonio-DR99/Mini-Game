@@ -89,7 +89,7 @@ const enemy = {
             if (Math.abs(enemyCenterX - cowCenterX) < enemy.size / 2 && 
                 Math.abs(enemyCenterY - cowCenterY) < enemy.size / 2) {
 
-               let cowId = parseInt(cow.id.replace("cow", ""));
+            let cowId = parseInt(cow.id.replace("cow", ""));
                 if (cowsData[cowId].state == "default") {
                     cowsData[cowId].life = 0;
                     document.getElementById(`lifeBar${cowId}`).value = 0;
@@ -106,7 +106,6 @@ const enemy = {
     },
 
     randomize() {
-       
         if (Math.random() < 1) {
             enemy.speedX = Math.random() * 1 + 1;
             enemy.speedY = Math.random() * 1 + 1;
@@ -117,19 +116,4 @@ const enemy = {
     disable() {
         enemyElement.remove();
     }
-}
-
-function checkEnemies() {
-    let rescuedCows = 0;
-
-    for (let i = 0; i < cowsData.length; i++) {
-        if (cowsData[i].state == 'rescued') {
-            rescuedCows++;
-        }
-    }
-
-    if (rescuedCows > 1 && !enemy.attacking) {
-        enemy.show();
-    }
-
 }

@@ -28,6 +28,7 @@ const game = {
         cloud.show();
         timer.enable();
         timer.tick();
+        enemy.show();
 
     },
 
