@@ -6,9 +6,9 @@ const ui = {
     heliFuel: document.getElementById('heliFuel'),
 
     updateHud() {
-        ui.coins = game.coins;
-        ui.cowsAbd = game.cowsAbd;
-        ui.cowsDea = game.cowsDie;
+        ui.coins.textContent = game.coins;
+        ui.cowsAbd.textContent = game.cowsAbd;
+        ui.cowsDea.textContent = game.cowsDie;
         ui.heliLife.value = heliData.life;
         ui.heliLife.max = heliData.maxLife;
         ui.heliFuel.value = heliData.fuel;
