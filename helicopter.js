@@ -175,7 +175,7 @@ function removeHelicopter(){
         helicopter.remove(); 
         heliData.moving=false; 
         heliData.life=heliData.maxLife; 
-        heliData.heliData.maxFuel; 
+        heliData.fuel=heliData.maxFuel; 
         heliData.repairing=false;
     }
 }
