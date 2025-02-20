@@ -23,7 +23,6 @@ function foodGenerate() {
     food.style.left = foodPosition[0] + 'px';
 
     main.appendChild(food);
-    setTimeout(foodGenerate,rngSeconds(3, 6));
 }
 
 
@@ -37,8 +36,6 @@ function foodDelete(id){
 function eatFood(cowId){
 
         let cow = document.getElementById('cow'+cowId);
-        
-        let foodElements = document.querySelectorAll('.food');
 
         let foodClose = null;
         let minDistance=Infinity;
@@ -48,20 +45,25 @@ function eatFood(cowId){
         let cowLeft=cow.offsetLeft;
 
         //Buscamos la comida mas cercana
-        for (let i=0; i<foodElements.length; i++){
-            let foodElement=foodElements[i]; 
-            let foodTop=foodElement.offsetTop; 
-            let foodLeft=foodElement.offsetLeft; 
-            
-            //almacenamos la distacia entre la vaca y la comida
-            let distace=calculateDistance(cowLeft, cowTop, foodLeft, foodTop);
-
-            if (distace<minDistance) {
-                minDistance=distace; 
-                foodClose=foodElement;
+        for (let i=0; i<foods.length; i++){
+            if(foods[i].status == 'normal') {
+                
+                let foodElement = document.getElementById(`food${i}`)
+                let foodTop=foodElement.offsetTop; 
+                let foodLeft=foodElement.offsetLeft; 
+                
+                //almacenamos la distacia entre la vaca y la comida
+                let distace=calculateDistance(cowLeft, cowTop, foodLeft, foodTop);
+                
+                if (distace<minDistance) {
+                    minDistance=distace; 
+                    foodClose=foodElement;
+                }
             }
         }
         
+        if (foodClose == null) return; 
+
         //Mover el vaca a la fruta
         cow.style.top = foodClose.offsetTop + 'px';
         cow.style.left = foodClose.offsetLeft + 'px';
@@ -71,6 +73,8 @@ function eatFood(cowId){
         cowsData[cowId].posY = foodClose.offsetTop;
 
         cow.classList.add("movecow");
+        let id = foodClose.id.replace('food', '');
+        foods[id].status = 'eaten'
 
         setTimeout(function() {
             foodClose.style.visibility = 'hidden';

@@ -4,6 +4,7 @@ const timer = {
     ticking: false,
     paused: false,
     lastTime: null, 
+    genTicks: 1,
 
     tick() {
         // Credit for the ticking implementation: https://codepen.io/samanime/pen/LYjOvpd
@@ -16,6 +17,7 @@ const timer = {
         // Funciones dependientes del tiempo
         timer.reduceLife(delta);
         timer.rotFood();
+        timer.generation();
         cloud.move();
         cloud.checkCollision();
         heliData.fuelUpdate();
@@ -32,6 +34,24 @@ const timer = {
 
         // Relanzar función en el próximo fotograma
         requestAnimationFrame(timer.tick);
+    },
+
+    generation(){
+        if(timer.genTicks == 1){
+            for(let i=0; i<5; i++){
+                generateCow();
+            }
+        }
+        if(timer.genTicks % 200 == 0){
+            if(Math.random() < 0.35){
+                generateCow();
+                if(Math.random() < 0.15){
+                    generateCow();
+                }
+            }
+        }
+        if(timer.genTicks % 250 == 0 && Math.random() < 0.6) foodGenerate();
+        timer.genTicks++;
     },
 
     reduceLife(delta) {

@@ -15,23 +15,27 @@ const game = {
 
     start() {
         if(game.started) return
-        showBases();
-        showHelicopter();
-        foodGenerate();
-        cloud.show();
-        timer.enable();
-        timer.tick();
-
+        
         // Inicializar valores necesarios
         game.cowsGen = 0,
         game.cowsAbd = 0,
         game.cowsDie = 0,
         game.started = true;
+        
+        showBases();
+        showHelicopter();
+        cloud.show();
+        timer.enable();
+        timer.tick();
+
     },
 
     death() {
         alert('Game Over') // Solución temporal
         game.started = false;
+
+        timer.disable()
+        
     }
 };
 
