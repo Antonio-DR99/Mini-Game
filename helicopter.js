@@ -14,7 +14,6 @@ const heliData = {
             heliData.life = 0;
             game.death('broken');
         }
-        document.getElementById('heliLife').textContent = heliData.life;
     },
     repair() {
         heliData.life += 0.5;
@@ -22,7 +21,6 @@ const heliData = {
             heliData.life = heliData.maxLife;
             heliData.repairing = false;
         }
-        document.getElementById('heliLife').textContent = heliData.life;
     },
     fuelUpdate(){
         if(heliData.moving){
@@ -158,7 +156,8 @@ function restoreCow(cow,destinationTop,destinationLeft){
 
     setTimeout(hideCow, 6000, cow);
     game.cowsAbd++;
-    ui.updateScores();
+    game.coins++;
+    ui.updateHud();
 }
 
 //funcion para calcular la distancia entre 2 puntos
