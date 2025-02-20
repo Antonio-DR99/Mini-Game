@@ -7,25 +7,25 @@
       transform: rotate(0deg) translateY(0);
     }
     25% {
-      transform: rotate(-30deg) translateY(-5px); 
+      transform: rotate(-20deg) translateY(-5px); 
     }
     50% {
-      transform: rotate(30deg) translateY(5px); 
+      transform: rotate(20deg) translateY(5px); 
     }
     75% {
-      transform: rotate(-30deg) translateY(-5px); 
+      transform: rotate(-10deg) translateY(-10px); 
     }
     100% {
-      transform: rotate(20deg) translateY(0); 
+      transform: rotate(0deg) translateY(-40px); 
     }
 }
 /* Animación de regreso a la base */
 @keyframes moveHelicopterBack {
   0% {
-      transform: rotate(20deg) translateY(0);
+      transform: rotate(0deg) translateY(-40px);
   }
   25% {
-      transform: rotate(-10deg) translateY(-3px);
+      transform: rotate(-10deg) translateY(-10px);
   }
   50% {
       transform: rotate(10deg) translateY(3px);
@@ -44,10 +44,22 @@
 /* Aplicamos la animación cuando se mueva */
 .move {
     animation: moveHelicopter 3s ease-in-out forwards;
+    &.moreSpeed{
+      animation: moveHelicopter 2.5s ease-in-out forwards;
+      &.finalSpeed{
+        animation: moveHelicopter 2s ease-in-out forwards;
+      }
+    }
 }
 
 .moveBack{
     animation: moveHelicopterBack 3s ease-in-out forwards;
+    &.moreSpeed{
+      animation: moveHelicopterBack 2.5s ease-in-out forwards;
+      &.finalSpeed{
+        animation: moveHelicopterBack 2s ease-in-out forwards;
+      }
+    }
 }
 
 /* Definir animación de movimiento*/

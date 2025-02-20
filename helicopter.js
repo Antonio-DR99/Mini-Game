@@ -7,6 +7,7 @@ const heliData = {
     maxFuel: 1600,
     fuel: 1600,
     repairing: false,
+    currentSpeed: 6000,
 
     attack() {
         heliData.life -= 1.5;
@@ -85,7 +86,7 @@ function moveHelicopter(cowId){
     setTimeout(function() {
         cow.style.visibility = 'hidden';// Ocultar la vaca después de que el helicóptero haya llegado
         moveHelicopterBack(cow); 
-    }, 6000);
+    }, heliData.currentSpeed);
 
     //Esperar 4s antes de llamar a la funcion de regreso
     
