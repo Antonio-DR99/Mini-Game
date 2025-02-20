@@ -107,6 +107,10 @@ main{
     opacity: 1;
 }
 
+.HelicopterMoving .cow{
+    cursor: url("resources/cursor/cursorComer.png"),auto;
+}
+
 .cow{
     position: absolute;
     background-image: url("resources/vacas/vaca4.png");
