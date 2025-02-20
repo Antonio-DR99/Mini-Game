@@ -148,6 +148,62 @@ main{
 }
 
 
+
+
+#deathView{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Jersey 20', sans-serif;
+    padding: 2rem 5rem;
+    max-width: 70dvw;
+    background-color: #05171b;
+    border: #375039 2px solid;
+    border-radius: 4px;
+    box-shadow: 0 0 10px white;
+    
+    h2{
+        font-weight: 400;
+        font-size: 4rem;
+        color: #ff7777;
+        margin-top: 1rem;
+    }
+
+    p{
+        font-size: 2rem;
+
+        &#deathMessage{
+            color: #ff7777;
+            margin-top: -2.5rem;
+        }
+
+        &#reduceMargin {
+            margin-top: -0.5rem;
+        }
+    }
+
+    button{
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: transparent;
+        border: white 2px solid;
+        font-family: 'Jersey 20', sans-serif;
+        color: white;
+        font-size: 1rem;
+        cursor: var(--pointer);
+
+        &:hover{
+            background-color: #375039;
+        }
+    }
+}
+
 /* ============================================================== */
 
 /*Estilos comida*/
@@ -188,7 +244,7 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     transition: top 5s ease, left 5s ease, transform 5s ease;
-    z-index: 2;
+    z-index: 3;
     filter: drop-shadow(0 0 15px rgba(0, 255, 150, 0.8));
     
     /* Activa el brillo cuando el ovni se mueve */
@@ -323,60 +379,5 @@ main{
         background-size: cover;
         top: 10px;
         left: 10px;
-        z-index: 9;
-}
-
-
-
-#deathView{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: 'Jersey 20', sans-serif;
-    padding: 2rem 5rem;
-    max-width: 70dvw;
-    background-color: #05171b;
-    border: #375039 2px solid;
-    border-radius: 4px;
-    box-shadow: 0 0 10px white;
-    
-    h2{
-        font-weight: 400;
-        font-size: 4rem;
-        color: #ff7777;
-        margin-top: 1rem;
-    }
-
-    p{
-        font-size: 2rem;
-
-        &#deathMessage{
-            color: #ff7777;
-            margin-top: -2.5rem;
-        }
-
-        &#reduceMargin {
-            margin-top: -0.5rem;
-        }
-    }
-
-    button{
-        padding: 8px 12px;
-        border-radius: 4px;
-        background-color: transparent;
-        border: white 2px solid;
-        font-family: 'Jersey 20', sans-serif;
-        color: white;
-        font-size: 1rem;
-
-        &:hover{
-            background-color: #375039;
-        }
-    }
+        z-index: 2;
 }

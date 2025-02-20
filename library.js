@@ -18,9 +18,6 @@ const game = {
         if(game.started) return
         
         // Inicializar valores necesarios
-        game.cowsGen = 0,
-        game.cowsAbd = 0,
-        game.cowsDie = 0,
         game.started = true;
         
         showBases();
@@ -28,7 +25,6 @@ const game = {
         cloud.show();
         timer.enable();
         timer.tick();
-        enemy.show();
 
     },
 
@@ -36,13 +32,49 @@ const game = {
         game.started = false;
         ui.showDeath(reason);
 
+        clearInterval(addCow)
         removeHelicopter();
         removeAllCows();
         timer.disable();
         cloud.disable();
         removeFood();
         enemy.disable();
+    },
+
+    restart() {
+        if(game.started) return
+        
+        document.getElementById('deathView').style.display = 'none';
+        clearInterval(addCow)
+
+        game.cowsGen = 0;
+        game.cowsAbd = 0;
+        game.cowsDie = 0;
+        game.coins = 0;
+        game.started = true;
+        timer.genTicks = 1;
+        heliData.life = 50;
+        heliData.maxLife = 50;
+        heliData.fuel = 1600;
+        heliData.maxFuel = 1600;
+        heliData.currentSpeed = 6000;
+        heliData.glory = 150;
+        heliData.moving = false;
+        upgrades.priceHealth = 3;
+        upgrades.priceFuel = 5;
+        upgrades.pricespeed = 10;
+        ui.upgradeSpeed.parentElement.style.display = 'flex';
+
+        fruitCount = 0;
+        foods = [];
+        cowsData = [];
+        
+        showHelicopter();
+        cloud.show();
+        timer.enable();
+        timer.tick();
     }
+
 };
 
 

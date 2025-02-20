@@ -1,3 +1,4 @@
+let addCow;
 const helicopter = document.getElementById('helicopter')
 
 const heliData = {
@@ -8,7 +9,7 @@ const heliData = {
     fuel: 1600,
     repairing: false,
     currentSpeed: 6000,
-    glory: 300,
+    glory: 150,
 
     attack() {
         if(heliData.glory > 0) return;
@@ -142,7 +143,7 @@ function moveHelicopterBack(cow){
     helicopter.classList.add("moveBack"); 
 
     //Hacer visible la vaca despues de 4 segundos de que el heli regrese
-    setTimeout(function() {
+    addCow = setTimeout(function() {
         restoreCow(cow, destinationTop, destinationLeft);
     }, 4000);
 }
@@ -164,6 +165,7 @@ function restoreCow(cow,destinationTop,destinationLeft){
     setTimeout(hideCow, 6000, cow);
     game.cowsAbd++;
     game.coins++;
+    if(game.cowsAbd == 3) enemy.show();
     ui.updateHud();
 }
 

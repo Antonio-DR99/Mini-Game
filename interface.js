@@ -27,7 +27,7 @@ const ui = {
         else ui.upgradeHealth.classList.remove('enabled')
         if(game.coins >= upgrades.priceFuel) ui.upgradeFuel.classList.add('enabled')
         else ui.upgradeFuel.classList.remove('enabled')
-        if(game.coins >= upgrades.priceFuel) ui.upgradeSpeed.classList.add('enabled')
+        if(game.coins >= upgrades.priceSpeed) ui.upgradeSpeed.classList.add('enabled')
         else ui.upgradeSpeed.classList.remove('enabled')
     },
 

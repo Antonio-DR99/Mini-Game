@@ -21,7 +21,7 @@ const timer = {
         ui.updateHud();
         if(cloud.attacking) heliData.attack();
         if(heliData.repairing) heliData.repair();   
-        if(enemy.shown)enemy.move();
+        if(enemy.shown) enemy.move();
         if(heliData.glory > 0) heliData.glory--;
         
         // Relanzar función en el próximo fotograma
