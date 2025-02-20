@@ -11,7 +11,7 @@ function updateLoad(){
         clearInterval(interval)
         document.querySelector('.pantallaCarga').style.display = 'none';
         document.getElementById("statsView").style.display = "flex";
-        document.getElementById("buttonsView").style.display = "block";
+        document.getElementById("buttonsView").style.display = "flex";
         document.querySelector("main").style.display = "block";
 
         game.start();

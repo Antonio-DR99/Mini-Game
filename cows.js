@@ -8,7 +8,7 @@ function generateCow() {
     entity.style.left = position[0] + 'px';
     entity.style.top = position[1] + 'px';
 
-    let rngLife = rngSeconds(20, 50)
+    let rngLife = rngSeconds(15, 50)
     
     let progress = document.createElement('progress')
     progress.id = 'lifeBar' + numId;

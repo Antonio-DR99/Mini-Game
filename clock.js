@@ -1,5 +1,3 @@
-let fpsShow = 0;
-
 const timer = {
     ticking: false,
     paused: false,
@@ -21,6 +19,7 @@ const timer = {
         cloud.move();
         cloud.checkCollision();
         heliData.fuelUpdate();
+        ui.updateHud();
         if(cloud.attacking) heliData.attack();
         if(heliData.repairing) heliData.repair();   
 
@@ -52,7 +51,7 @@ const timer = {
                 }
             }
         }
-        if(timer.genTicks % 350 == 0 && Math.random() < 0.65) foodGenerate();
+        if(timer.genTicks % 300 == 0 && Math.random() < 0.65) foodGenerate();
         timer.genTicks++;
     },
 
@@ -64,7 +63,7 @@ const timer = {
                 if(cowsData[i].life < 0){
                     killCow(i);
                     game.cowsDie++;
-                    ui.updateScores();
+                    ui.updateHud();
                 }
             }
         }

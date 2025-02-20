@@ -2,8 +2,8 @@ const main = document.querySelector('main');
 
 // INFORMACIÓN SOBRE LA PANTALLA
 const display = {
-    width() { return main.clientWidth },
-    height() { return main.clientHeight }
+    width() { return main.clientWidth - 6},
+    height() { return main.clientHeight - 12}
 }
 
 // INFORMACIÓN SOBRE EL JUEGO
@@ -12,6 +12,7 @@ const game = {
     cowsGen: 0,
     cowsAbd: 0,
     cowsDie: 0,
+    coins: 0,
 
     start() {
         if(game.started) return

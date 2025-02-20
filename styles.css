@@ -1,5 +1,9 @@
 /* Estructura principal */
 
+:root{
+    --pointer: url("resources/cursor/cursor_pointer.png"),auto;
+}
+
 body{
     margin: 0;
 
@@ -18,12 +22,48 @@ body{
 #statsView{
     display: flex;
     flex-direction: row;
-    justify-self: center;
+    justify-content: space-between;
     gap: 4px;
     font-family: 'Jersey 20', sans-serif;
-    font-size: 2rem;
-    p{
-        margin: 12px 0;
+    font-size: 2.75rem;
+    width: 90dvw;
+
+    p{ margin: 0; }
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        > div {
+            margin: 8px 12px;
+        }
+
+        img{
+            width: 32px;
+        }
+
+        progress{
+            width: 12rem;
+            height: 2rem;
+            margin: 0 4px;
+            appearance: none;
+            -webkit-appearance: none;
+            border: white 1px solid;
+            background-color: transparent;
+            border-radius: 4px;
+            padding: 2px;
+
+            &::-webkit-progress-bar{
+                background-color: transparent;
+            }
+
+            &::-webkit-progress-value{
+                background-color: rgb(51, 224, 51);
+                border-radius: 2px;
+            }
+        }
     }
 }
 
@@ -37,12 +77,78 @@ main{
     justify-content: center;
 
     border: 2px solid #375039;
+    margin-bottom: 1rem;
     border-radius: 4px;
     overflow: hidden;
     background-image: url("resources/background.png");
     background-size: cover;
     background-position: center;
 }
+
+#buttonsView{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+    & .spacer{
+        width: 80px;
+    }
+
+    & .upgradeButton{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Jersey 20', sans-serif;
+
+        > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    button{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        border: lightgray 2px solid;
+        background-color: gray;
+
+        img{
+            width: 48px;
+            height: 48px;
+            filter: saturate(0);
+        }
+
+        &.enabled{
+            img{ filter: none;}
+            cursor: var(--pointer);
+
+            &#upgHeal{border-color: #dff5d4; background-color: #a5f39e;}
+            &#upgSpeed{border-color: #cde5ff; background-color: #7397d6;}
+            &#upgFuel{border-color: #fbc0b9; background-color: #cb8973;}
+            &#butRepair{border-color: #e5fff6; background-color: #76d2b4;}
+
+            &:hover{
+                border-color: #ffd700 !important;
+                background-color: #ffef92 !important;
+            }
+        }
+    }
+}
+
+
+/* ============================================================== */
 
 /*Estilos comida*/
 .food{

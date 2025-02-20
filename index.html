@@ -36,23 +36,66 @@
         </div>
     </div>
     <div id="statsView">
-        <p>Abducciones: </p>
-        <p id="statAbd">0</p>
-        <p>Muertes: </p>
-        <p id="statDea">0</p>
-        <p>Heli-vida: </p>
-        <p id="heliLife">50</p>
-        <p>Gasolina: </p>
-        <p id="heliFuel">500</p>
-        <p style="font-weight: bold;">FPS:</p>
-        <p id="debDelta" style="font-weight: bold;">0</p>
+        <div>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="statCoi">0</p>
+            </div>
+            <div>
+                <img src="./resources/interfaz/cows.png">
+                <p id="statAbd">0</p>
+            </div>
+            <div>
+                <img src="./resources/interfaz/deaths.png">
+                <p id="statDea">0</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="./resources/interfaz/ovniHeart.png">
+                <progress id="heliLife" value="0" max="100"></progress>
+            </div>
+            <div>
+                <img src="./resources/interfaz/fuel.png">
+                <progress id="heliFuel" value="0" max="100"></progress>
+            </div>
+        </div>
     </div>
 
     <main></main>
 
     <div id="buttonsView">
-        <button onclick="heliData.startRepair()">Reparar helicóptero</button>
-
+        <div class="upgradeButton">
+            <button onclick="upgrades.health()" id="upgHeal">
+                <img src="./resources/interfaz/vidaUp.png">
+            </button>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="costHealth">5</p>
+            </div>
+        </div>
+        <div class="upgradeButton">
+            <button onclick="upgrades.fuel()" id="upgFuel">
+                <img src="./resources/interfaz/fuelUp.png">
+            </button>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="costFuel">5</p>
+            </div>
+        </div>
+        <div class="upgradeButton">
+            <button onclick="upgrades.speed()" id="upgSpeed">
+                <img src="./resources/interfaz/velocidadUp.png">
+            </button>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="costSpeed">10</p>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <button onclick="heliData.startRepair()" id="butRepair">
+            <img src="./resources/interfaz/reparar.png">
+        </button>
     </div>
 
     <!-- Javascript -->
