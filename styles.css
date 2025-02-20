@@ -108,7 +108,7 @@ main{
 }
 
 .HelicopterMoving .cow{
-    cursor: url("resources/cursor/cursorComer.gif"),auto;
+    cursor: url("resources/cursor/cursorComer.png"),auto;
 }
 
 .cow{
