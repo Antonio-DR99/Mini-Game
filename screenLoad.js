@@ -64,5 +64,5 @@ function mostrarDialogo() {
 window.onload = function() {
     document.getElementById("statsView").style.display = "none";
     document.getElementById("buttonsView").style.display = "none";
-    document.querySelector("main").style.display = "none";
+    // document.querySelector("main").style.display = "none";
 };

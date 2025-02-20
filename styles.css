@@ -131,6 +131,10 @@ main{
     background-image: url(./resources/vacas/heart.png);
     background-repeat: repeat-x;
     background-size: contain;
+
+    &::webkit-progress-bar{
+        background: transparent;
+    }
 }
 
 /* Estilos para las bases */
