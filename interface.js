@@ -44,7 +44,7 @@ const ui = {
             default:
                 deathMessage = 'Mejor suerte la próxima vez.'
         }
-        document.getElementById('deathAbd').textContent = deathMessage;
+        document.getElementById('deathMessage').textContent = deathMessage;
         document.getElementById('deathAbd').textContent = game.cowsAbd;
         document.getElementById('deathDie').textContent = game.cowsDie;
     }

@@ -61,7 +61,6 @@ const timer = {
     },
 
     rotFood() {
-
         for(let i=0;i<foods.length;i++){
             if(foods[i].status == 'normal'){
                 if (foods[i].life > 0){
