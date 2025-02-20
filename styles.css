@@ -340,6 +340,7 @@ main{
 
     font-family: 'Jersey 20', sans-serif;
     padding: 2rem 5rem;
+    max-width: 70dvw;
     background-color: #05171b;
     border: #375039 2px solid;
     border-radius: 4px;
@@ -348,5 +349,34 @@ main{
     h2{
         font-weight: 400;
         font-size: 4rem;
+        color: #ff7777;
+        margin-top: 1rem;
+    }
+
+    p{
+        font-size: 2rem;
+
+        &#deathMessage{
+            color: #ff7777;
+            margin-top: -2.5rem;
+        }
+
+        &#reduceMargin {
+            margin-top: -0.5rem;
+        }
+    }
+
+    button{
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: transparent;
+        border: white 2px solid;
+        font-family: 'Jersey 20', sans-serif;
+        color: white;
+        font-size: 1rem;
+
+        &:hover{
+            background-color: #375039;
+        }
     }
 }

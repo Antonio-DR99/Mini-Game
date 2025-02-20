@@ -140,8 +140,14 @@
 }
 
 .abducing{
-  animation: abduceCow 1s ease-in-out forwards/*, abduceCow 1s ease-in-out reverse 1.5s forwards*/;
+  animation: abduceCow 1s ease-in-out forwards;
 }
+
+.abduced {
+  animation: abduceCow 1s ease-in-out reverse forwards;
+}
+
+
 
 
 /* Definir animación de movimiento*/

@@ -32,16 +32,16 @@ const game = {
 
     },
 
-    death() {
-        alert('Game Over') // Solución temporal
+    death(reason) {
         game.started = false;
+        ui.showDeath(reason);
 
-        removeHelicopter()
-        removeAllCows()
-        timer.disable()
-        cloud.disable()
-        removeFood()
-        enemy.disable()
+        removeHelicopter();
+        removeAllCows();
+        timer.disable();
+        cloud.disable();
+        removeFood();
+        enemy.disable();
     }
 };
 

@@ -44,7 +44,7 @@ const cloud = {
         }
         
         if (rebote){
-            cloud.colliderPause = 15;
+            cloud.colliderPause = 30;
             cloud.updateRotation();
         }
 
