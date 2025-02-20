@@ -4,8 +4,8 @@ const heliData = {
     moving: false,
     maxLife: 50,
     life: 50,
-    maxFuel: 1400,
-    fuel: 1400,
+    maxFuel: 1600,
+    fuel: 1600,
     repairing: false,
 
     attack() {
@@ -174,7 +174,9 @@ function removeHelicopter(){
     if (helicopter) {
         helicopter.remove(); 
         heliData.moving=false; 
+        heliData.life=50;
         heliData.life=heliData.maxLife; 
+        heliData.maxFuel=1400;
         heliData.fuel=heliData.maxFuel; 
         heliData.repairing=false;
     }

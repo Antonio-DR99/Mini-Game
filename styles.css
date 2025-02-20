@@ -5,6 +5,9 @@ body{
 
     width: 100dvw;
     height: 100dvh;
+
+    color: white;
+    background-color: #05171b;
     
     display: flex;
     flex-direction: column;
@@ -17,6 +20,11 @@ body{
     flex-direction: row;
     justify-self: center;
     gap: 4px;
+    font-family: 'Jersey 20', sans-serif;
+    font-size: 2rem;
+    p{
+        margin: 12px 0;
+    }
 }
 
 main{
@@ -28,7 +36,7 @@ main{
     align-items: center;
     justify-content: center;
 
-    border: 2px solid black;
+    border: 2px solid #375039;
     border-radius: 4px;
     overflow: hidden;
     background-image: url("resources/background.png");
