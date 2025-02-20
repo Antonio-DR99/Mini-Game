@@ -39,8 +39,10 @@ const game = {
         timer.disable()
         cloud.disable()
         removeFood()
+        enemy.disable()
     }
 };
+
 
 const ui = {
     updateScores() {

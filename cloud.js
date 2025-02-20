@@ -64,6 +64,7 @@ const cloud = {
     updateRotation() {
         cloud.angle = Math.atan2(cloud.speedY, cloud.speedX) * (180 / Math.PI) - 35;
     },
+    
     checkCollision() {
         let helicopter = document.getElementById("helicopter");
         let heliX = helicopter.offsetLeft;
