@@ -25,7 +25,7 @@ function generateCow() {
     });
 
     entity.addEventListener('click', function() {
-        moveHelicopter(numId);  // Llamar a la función para mover el heli
+          cowAction(numId);
     });
     
     entity.appendChild(progress)
@@ -42,4 +42,16 @@ function killCow(who){
 
 function hideCow(node) {
     node.remove();
+}
+
+
+function cowAction(cowId) {
+    
+    if(!heliData.moving) moveHelicopter(cowId);
+    else{
+        if (heliData.moving && cowsData[cowId].state == 'default') {
+            eatFood(cowId);
+            return;
+        } 
+    }
 }
