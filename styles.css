@@ -242,13 +242,17 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
-    transition: top 3s ease, left 3s ease, transform 3s ease;
+    transition: top 3s ease, left 3s ease;
     cursor: url("resources/cursor/cursor_pointer.png"),auto;
+    transform: scaleX(100%) scaleY(100%);
     &.dead{
         background-image: url("resources/vacas/vaca3.png");
     }
+    &.abducing{
+        transform-origin: top center;
+    }
     &.abduced{
-        transition: 0s;
+        transition: all 0s;
     }
 }
 
@@ -322,3 +326,27 @@ main{
         z-index: 9;
 }
 
+
+
+#deathView{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Jersey 20', sans-serif;
+    padding: 2rem 5rem;
+    background-color: #05171b;
+    border: #375039 2px solid;
+    border-radius: 4px;
+    box-shadow: 0 0 10px white;
+    
+    h2{
+        font-weight: 400;
+        font-size: 4rem;
+    }
+}

@@ -8,8 +8,10 @@ const heliData = {
     fuel: 1600,
     repairing: false,
     currentSpeed: 6000,
+    glory: 300,
 
     attack() {
+        if(heliData.glory > 0) return;
         heliData.life -= 1.5;
         if(heliData.life <= 0){
             heliData.life = 0;
@@ -88,6 +90,10 @@ function moveHelicopter(cowId){
         moveHelicopterBack(cow); 
     }, heliData.currentSpeed);
 
+    setTimeout(function() {
+        cow.classList.add('abducing');
+    }, heliData.currentSpeed - 1500);
+
     //Esperar 4s antes de llamar a la funcion de regreso
     
 }
@@ -125,7 +131,7 @@ function moveHelicopterBack(cow){
     helicopter.classList.remove("move","moveBack");
 
     //Coordenadas de destino
-    let destinationTop=baseClose.offsetTop; 
+    let destinationTop=baseClose.offsetTop - 25; 
     let destinationLeft=baseClose.offsetLeft;
     
     //Mover el heli a la base de destino

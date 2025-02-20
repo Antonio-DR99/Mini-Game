@@ -112,6 +112,7 @@ const enemy = {
     },
 
     disable() {
+        let enemyElement = document.createElement("div");
         enemyElement.remove();
     }
 }

@@ -1,6 +1,5 @@
 const timer = {
     ticking: false,
-    paused: false,
     lastTime: null, 
     genTicks: 1,
 
@@ -10,8 +9,8 @@ const timer = {
         const now = Date.now();
         const delta = now - timer.lastTime;
         timer.lastTime = now;
-        if (!timer.paused) { timer.timer -= delta; }
-
+        timer.timer -= delta;
+        
         // Funciones dependientes del tiempo
         timer.reduceLife(delta);
         timer.rotFood();
@@ -23,6 +22,7 @@ const timer = {
         if(cloud.attacking) heliData.attack();
         if(heliData.repairing) heliData.repair();   
         if(enemy.shown)enemy.move();
+        if(heliData.glory > 0) heliData.glory--;
         
         // Relanzar función en el próximo fotograma
         requestAnimationFrame(timer.tick);
@@ -34,7 +34,7 @@ const timer = {
                 generateCow();
             }
         }
-        if(timer.genTicks % 450 == 0){
+        if(timer.genTicks % 400 == 0){
             if(Math.random() < 0.65){
                 generateCow();
                 if(Math.random() < 0.15){

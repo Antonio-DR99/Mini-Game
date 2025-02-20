@@ -124,6 +124,25 @@
 }
 
 
+@keyframes abduceCow {
+  0% {
+    transform: scaleY(100%) scaleX(100%);
+  }
+  20% {
+    transform: scaleY(90%) scaleX(95%);
+  }
+  90% {
+    transform: scaleY(0%) scaleX(20%);
+  }
+  100% {
+    transform: scaleY(0%) scaleX(20%);
+  }
+}
+
+.abducing{
+  animation: abduceCow 1s ease-in-out forwards/*, abduceCow 1s ease-in-out reverse 1.5s forwards*/;
+}
+
 
 /* Definir animación de movimiento*/
 @keyframes moveCowToFood {
@@ -150,3 +169,4 @@
 .movecow {
   animation: moveCowToFood 3s ease-in-out forwards;
 }
+
