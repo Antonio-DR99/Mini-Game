@@ -168,3 +168,19 @@ function restoreCow(cow,destinationTop,destinationLeft){
 function calculateDistance(x1,y1,x2,y2){
     return Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
 }
+
+
+
+//Funcion para eliminar el heli
+
+function removeHelicepter(){
+    let helicopter=document.getElementById('helicopter'); 
+
+    if (helicopter) {
+        helicopter.remove(); 
+        heliData.moving=false; 
+        heliData.life=heliData.maxLife; 
+        heliData.heliData.maxFuel; 
+        heliData.repairing=false;
+    }
+}
