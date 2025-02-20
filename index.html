@@ -9,13 +9,33 @@
     <!-- Favicon -->
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Tiny5&display=swap" rel="stylesheet">
+
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="screenLoad.css">
 
 </head>
 <body onload="game.start()">
+    <audio id="audio" src="resources/sound/intro.mp3" loop preload="auto"></audio>
+    
+    <div class="pantallaCarga">
+        <div class="contenedorIntro">
+            <div class="barraCarga">
+                <h1>LOADING...</h1>
+                <progress id="progress" max="100" value="0"></progress>
+            </div>
+            <button onclick="startBarra()">START GAME</button>
+        </div>
+        <div class="menu">
+            <img src="resources/piloto.gif" onclick="mostrarDialogo()">
+            <div id="bocadillo" class="bocadillo"></div>
+        </div>
+    </div>
     <div id="statsView">
         <p>Abducciones: </p>
         <p id="statAbd">0</p>
@@ -46,5 +66,6 @@
     <script src="food.js"></script>
     <script src="cloud.js"></script>
     <script src="bases.js"></script>
+    <script src="screenLoad.js"></script>
 </body>
 </html>

@@ -10,7 +10,12 @@ function updateLoad(){
     if (value>=100) {
         clearInterval(interval)
         audio.pause();
-        window.location.href = "index.html";
+        document.querySelector('.pantallaCarga').style.display = 'none';
+        document.getElementById("statsView").style.display = "flex";
+        document.getElementById("buttonsView").style.display = "block";
+        document.querySelector("main").style.display = "block";
+
+        game.start();
     }else{
         value++
         progressLoad.value=value;
@@ -55,3 +60,9 @@ function mostrarDialogo() {
         indice = 0;  // Resetear al primer mensaje
     }
 }
+
+window.onload = function() {
+    document.getElementById("statsView").style.display = "none";
+    document.getElementById("buttonsView").style.display = "none";
+    document.querySelector("main").style.display = "none";
+};
