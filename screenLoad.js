@@ -34,14 +34,14 @@ function startBarra(){
 
 
 let dialogo=[
-    "¡Atención! Las vacas están en posiciones aleatorias. ¡Prepárate para volar y abducirlas!",
-    "El reloj está corriendo, ten cuidado con el tiempo. Si no llegas a tiempo, las vacas no podrán ser abducidas.",
-    "Recuerda, mientras estés en vuelo, no podrás realizar nuevas órdenes con tu ovni hasta que regreses a la base. ¡Haz cada movimiento contar!",
-    "Los números en tu pantalla indican cuántas vacas has abducido y cuántas han caído.",
-    "¡Nuevo objetivo! Si una vaca necesita comida, clica sobre ella mientas el ovni esté en vuelo. ¡Pero ten cuidado, el tiempo es limitado!",
-    "¡Atención! Un meteorito se acerca. Si te cruzas con el, el ovni podría quedar fuera de servicio. ¡Evítalo a toda costa!",
-    "Si la nave se ha dañado, puedes repararla en las bases. Pero solo cuando hayas repostado por completo.",
-    "Cuantas más vacas consigas, más puntos obtendrás. ¿Sabes que puedes hacer con ellos? ¡Exacto! Comprar mejoras."
+    "¡Hola! Soy Kael Draven, explorador de tierras olvidadas. ¡Necesito tu ayuda! Algo oscuro está despertando y no puedo enfrentarlo solo.",
+    "Para salvar a las vacas, haz clic sobre ellas. Mientras la nave esté en movimiento, sigue haciendo clic para guiarlas hacia la comida y evitar que mueran de hambre.",
+    "Cuidado con el monstruo que ronda el mapa. Se mueve aleatoriamente y, si toca a una vaca, la eliminará. Mantén a las vacas a salvo guiándolas lejos de él.",
+    "La nave usa gasolina, así que ten cuidado de no quedarte sin ella. Para recargar, ve a una de las bases y espera a que el tanque se llene.",
+    "Si la nave está dañada, puedes repararla en una de las bases. Solo colócate sobre el botón con el símbolo de un martillo para arreglarla.", 
+    "Puedes obtener bonificaciones para mejorar tu nave. Usa tu dinero para aumentar la capacidad de gasolina, la vida de la nave y su velocidad.",
+    "Por cada vaca que rescates, recibirás 1 moneda. Usa tus monedas para conseguir mejoras y fortalecer tu nave.",
+
 ];
 
 function mostrarDialogo() {
@@ -66,4 +66,6 @@ window.onload = function() {
     document.getElementById("statsView").style.display = "none";
     document.getElementById("buttonsView").style.display = "none";
     document.querySelector("main").style.display = "none";
+
+    mostrarDialogo();
 };

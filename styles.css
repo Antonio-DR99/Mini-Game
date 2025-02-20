@@ -349,10 +349,17 @@ main{
     h2{
         font-weight: 400;
         font-size: 4rem;
+        color: #ff7777;
+        margin-top: 1rem;
     }
 
     p{
         font-size: 2rem;
+
+        &#deathMessage{
+            color: #ff7777;
+            margin-top: -2.5rem;
+        }
 
         &#reduceMargin {
             margin-top: -0.5rem;
@@ -366,6 +373,7 @@ main{
         border: white 2px solid;
         font-family: 'Jersey 20', sans-serif;
         color: white;
+        font-size: 1rem;
 
         &:hover{
             background-color: #375039;
