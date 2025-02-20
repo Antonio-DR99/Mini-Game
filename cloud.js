@@ -83,7 +83,7 @@ const cloud = {
             cloud.speedY = ((Math.random()*3)+1)*rngMathInvert()
             cloud.updateRotation();
         }
-        if(Math.random() < 1){
+        if(Math.random() < 0.8){
             cloud.size = ((Math.random()*50)+80);
             document.getElementById('stormCloud').style.width = cloud.size + 'px';
             document.getElementById('stormCloud').style.height = cloud.size + 'px';

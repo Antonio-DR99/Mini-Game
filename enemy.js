@@ -2,12 +2,13 @@ const enemy = {
     posX: 0,
     posY: 0,
     size: 100,
-    speedX: 1,
-    speedY: 1,
+    speedX: 0.4,
+    speedY: 0.4,
     attacking: false,
     count: 0,
     angle: 0,
     colliderPause: 0,
+    shown: false,
 
     show() {
         // Crear el div del enemigo
@@ -25,7 +26,7 @@ const enemy = {
         enemyElement.style.top = enemy.posY + "px";
         
         enemy.attacking = true;
-        requestAnimationFrame(enemy.move);
+        enemy.shown=true;
     },
 
     move() {
@@ -95,7 +96,6 @@ const enemy = {
                     document.getElementById(`lifeBar${cowId}`).value = 0;
                     killCow(cowId);
                     game.cowsDie++;
-                    ui.updateScores();
                 }     
         }
     }
@@ -106,9 +106,9 @@ const enemy = {
     },
 
     randomize() {
-        if (Math.random() < 1) {
-            enemy.speedX = Math.random() * 1 + 1;
-            enemy.speedY = Math.random() * 1 + 1;
+        if (Math.random() < 0.8) {
+            enemy.speedX = ((Math.random()*0.6)+0.3)*rngMathInvert()
+            enemy.speedY = ((Math.random()*0.6)+0.3)*rngMathInvert()
             enemy.updateRotation();
         }
     },
