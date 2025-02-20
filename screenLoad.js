@@ -9,7 +9,6 @@ let indice = 0; // Contador para seguir el orden de los mensajes
 function updateLoad(){
     if (value>=100) {
         clearInterval(interval)
-        audio.pause();
         document.querySelector('.pantallaCarga').style.display = 'none';
         document.getElementById("statsView").style.display = "flex";
         document.getElementById("buttonsView").style.display = "block";

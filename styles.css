@@ -120,20 +120,34 @@ main{
 
 .lifeBar{
     position: relative;
-    bottom: 20px;
+    bottom: 16px;
     left: -5px;
     width: 70px;
-    height: 10px;
+    height: 14px;
 
     appearance: none;
     -webkit-appearance: none;
 
-    background-image: url(./resources/vacas/heart.png);
-    background-repeat: repeat-x;
-    background-size: contain;
+    background-color: transparent;
 
-    &::webkit-progress-bar{
-        background: transparent;
+    &::-webkit-progress-bar{
+        background-color: transparent;
+    }
+
+    &::-webkit-progress-value{
+        background-image: url(./resources/vacas/heart.png);
+        background-repeat: repeat-x;
+        background-size: contain;
+        background-position: left center;
+        background-color: transparent;
+    }
+
+    &::-moz-progress-bar{
+        background-image: url(./resources/vacas/heart.png);
+        background-repeat: repeat-x;
+        background-size: contain;
+        background-position: left center;
+        background-color: transparent;
     }
 }
 
