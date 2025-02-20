@@ -1,7 +1,7 @@
 const cloud = {
     posX: 0,
     posY: 0,
-    size: 110,
+    size: 100,
     speedX: 2,
     speedY: 2,
     attacking: false,
@@ -77,6 +77,7 @@ const cloud = {
             cloud.updateRotation();
         }
     },
+
 
     disable(){
        stormCloud.remove();
