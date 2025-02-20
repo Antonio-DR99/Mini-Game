@@ -69,8 +69,6 @@ const enemy = {
             enemy.count = 0;
             enemy.randomize();
         }
-
-        requestAnimationFrame(enemy.move);
     },
 
     checkCollisionWithCows() {
