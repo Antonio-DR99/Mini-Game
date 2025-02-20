@@ -6,7 +6,8 @@ const cloud = {
     speedY: 2,
     attacking: false,
     count: 0,
-    angle:0,
+    angle: 0,
+    colliderPause: 0,
 
     show() {
         let stormCloud = document.createElement("div");
@@ -28,17 +29,22 @@ const cloud = {
         cloud.posY += cloud.speedY;
         
         // Invertir dirección si toca los bordes
-        if (cloud.posX <= 0 || cloud.posX >= display.width() - cloud.size) {
-            cloud.speedX = -cloud.speedX; // Cambiar la dirección
-            rebote=true;
-        }
-    
-        if (cloud.posY <= 0 || cloud.posY >= display.height() - cloud.size) {
-            cloud.speedY = -cloud.speedY;
-            rebote=true;
+        if(cloud.colliderPause <= 0) {
+            if (cloud.posX <= 0 || cloud.posX >= display.width() - cloud.size) {
+                cloud.speedX = -cloud.speedX; // Cambiar la dirección
+                rebote=true;
+            }
+        
+            if (cloud.posY <= 0 || cloud.posY >= display.height() - cloud.size) {
+                cloud.speedY = -cloud.speedY;
+                rebote=true;
+            }
+        } else {
+            cloud.colliderPause--;
         }
         
         if (rebote){
+            cloud.colliderPause = 15;
             cloud.updateRotation();
         }
 
@@ -56,7 +62,7 @@ const cloud = {
     },
 
     updateRotation() {
-        cloud.angle = Math.atan2(cloud.speedY, cloud.speedX) * (180 / Math.PI);
+        cloud.angle = Math.atan2(cloud.speedY, cloud.speedX) * (180 / Math.PI) - 35;
     },
     checkCollision() {
         let helicopter = document.getElementById("helicopter");

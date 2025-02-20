@@ -74,6 +74,7 @@ function eatFood(cowId){
 
         cow.classList.add("movecow");
         let id = foodClose.id.replace('food', '');
+        foods[id].status = 'eaten'
 
         setTimeout(function() {
             foodDelete(id);
