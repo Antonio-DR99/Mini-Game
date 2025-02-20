@@ -29,6 +29,24 @@ const ui = {
         else ui.upgradeFuel.classList.remove('enabled')
         if(game.coins >= upgrades.priceFuel) ui.upgradeSpeed.classList.add('enabled')
         else ui.upgradeSpeed.classList.remove('enabled')
+    },
+
+    showDeath(reason) {
+        document.getElementById('deathView').style.display = 'flex';
+        let deathMessage;
+        switch (reason) {
+            case 'fuel':
+                deathMessage = 'Te quedaste sin gasolina.'
+                break;
+            case 'life':
+                deathMessage = 'Se rompió tu ovni.'
+                break;
+            default:
+                deathMessage = 'Mejor suerte la próxima vez.'
+        }
+        document.getElementById('deathAbd').textContent = deathMessage;
+        document.getElementById('deathAbd').textContent = game.cowsAbd;
+        document.getElementById('deathDie').textContent = game.cowsDie;
     }
 }
 
