@@ -35,13 +35,13 @@ const game = {
     death() {
         alert('Game Over') // Solución temporal
         game.started = false;
-
         removeHelicopter()
         removeAllCows()
         timer.disable()
         cloud.disable()
         removeFood()
         enemy.disable()
+
     }
 };
 
