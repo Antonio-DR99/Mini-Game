@@ -191,26 +191,42 @@ main{
     z-index: 2;
     filter: drop-shadow(0 0 15px rgba(0, 255, 150, 0.8));
     
-}
-/* Haz de luz */
-#helicopter::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 50px;
-    height: 80px;
-    background: rgba(0, 255, 150, 0.3);
-    filter: blur(15px);
-    transform: translateX(-50%);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+    /* Activa el brillo cuando el ovni se mueve */
+    &.move::before{
+        opacity: 0.7;
+    }
 
-/* Activa el haz de luz cuando el OVNI se mueve */
-.move::after {
-    opacity: 1;
+    /* Brillo */
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 120px;
+        height: 60px;
+        background: #5cffbb3a;
+        filter: blur(15px);
+        transform: translateX(-50%);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Abducción */
+    &::after {
+        content: '';
+        position: absolute;
+        width: 36px;
+        height: 50px;
+        top: 50px;
+        left: 20px;
+        z-index: -1;
+        background-color: #75ff8757;
+        filter: blur(4px);
+        backdrop-filter: blur(8px) hue-rotate(-50deg);
+        transform: scaleY(0%);
+        transform-origin: top center;
+    }
 }
 
 .HelicopterMoving .cow{
