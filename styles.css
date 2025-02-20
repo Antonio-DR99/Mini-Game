@@ -45,57 +45,67 @@ body{
         }
 
         /* Estilo actual de la barra de progreso */
-progress {
-    width: 12rem;
-    height: 2rem;
-    margin: 0 4px;
-    appearance: none;
-    -webkit-appearance: none;
-    border: white 1px solid;
-    background-color: transparent;
-    border-radius: 4px;
-    padding: 2px;
-  }
-  
-  progress::-webkit-progress-bar {
-    background-color: transparent;
-  }
-  
-  progress::-webkit-progress-value {
-    background: linear-gradient(gold, #c85, gold);
-    background-repeat: repeat;
-    border-radius: 2px;
-    box-shadow: 0 0 10px 0px orange;
-    animation: shine 4s ease-in infinite, end 1s ease-out 1;
-    transition: width 3s ease;
-  }
-  
-  /* Animación de la barra */
-  @property --progress {
-    syntax: "<length>";
-    initial-value: 0%;
-    inherits: true;
-  }
-  
-  @keyframes shine {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }
-  
-  @keyframes end {
-    0%,
-    100% {
-      box-shadow: 0 0 10px 0px orange;
-    }
-    50% {
-      box-shadow: 0 0 15px 5px orange;
-    }
-  }
-  
+        progress {
+            width: 12rem;
+            height: 2rem;
+            margin: 0 4px;
+            appearance: none;
+            -webkit-appearance: none;
+            border: white 1px solid;
+            background-color: transparent;
+            border-radius: 4px;
+            padding: 2px;
+        
+        
+            &::-webkit-progress-bar {
+                background-color: transparent;
+            }
+            
+            &::-webkit-progress-value {
+                background-size: 200% 100%;
+                background-repeat: repeat;
+                border-radius: 2px;
+            }
+
+            &::-moz-progress-bar{
+                background-size: 200% 100%;
+                background-repeat: repeat;
+                border-radius: 2px;
+            }
+
+            &#heliFuel{
+                &::-webkit-progress-value{
+                    background: linear-gradient(gold, #c85, gold);
+                }
+                &::-moz-progress-bar{
+                    background: linear-gradient(gold, #c85, gold);
+                }
+                &.warning{
+                    &::-webkit-progress-value{
+                        background: linear-gradient(#ff000d, #f5651d, #ff000d);
+                    }
+                    &::-moz-progress-bar{
+                        background: linear-gradient(#ff000d, #f5651d, #ff000d);
+                    }
+                }
+            }
+            &#heliLife{
+                &::-webkit-progress-value{
+                    background: linear-gradient(#1eff00, #12fc87, #1eff00);
+                }
+                &::-moz-progress-bar{
+                    background: linear-gradient(#1eff00, #12fc87, #1eff00);
+                }
+                &.warning{
+                    &::-webkit-progress-value{
+                        background: linear-gradient(#ff000d, #f5651d, #ff000d);
+                    }
+                    &::-moz-progress-bar{
+                        background: linear-gradient(#ff000d, #f5651d, #ff000d);
+                    }
+                }
+            }
+        }
     }
 }
 

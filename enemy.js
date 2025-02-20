@@ -30,6 +30,9 @@ const enemy = {
     },
 
     move() {
+        let enemyElement = document.getElementById("enemy");
+        if(enemyElement == null) return;
+
         let rebote = false;
 
         enemy.posX += enemy.speedX;
@@ -57,7 +60,6 @@ const enemy = {
         }
 
         // Actualizar el estilo del div en la pantalla
-        let enemyElement = document.getElementById("enemy");
         enemyElement.style.left = enemy.posX + "px";
         enemyElement.style.top = enemy.posY + "px";
         enemyElement.style.transform = `rotate(${enemy.angle}deg)`;
@@ -113,7 +115,8 @@ const enemy = {
 
     disable() {
         let enemyElement = document.getElementById("enemy");
-            enemyElement.remove();    
+        if(enemyElement == null) return;
+        enemyElement.remove();    
 }
 
 };

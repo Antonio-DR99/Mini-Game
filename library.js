@@ -62,8 +62,12 @@ const game = {
         heliData.moving = false;
         upgrades.priceHealth = 3;
         upgrades.priceFuel = 5;
-        upgrades.pricespeed = 10;
+        upgrades.priceSpeed = 10;
         ui.upgradeSpeed.parentElement.style.display = 'flex';
+
+        document.getElementById('costHealth').textContent = upgrades.priceHealth;
+        document.getElementById('costFuel').textContent = upgrades.priceFuel;
+        document.getElementById('costSpeed').textContent = upgrades.priceSpeed;
 
         fruitCount = 0;
         foods = [];

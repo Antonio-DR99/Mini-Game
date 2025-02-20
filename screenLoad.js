@@ -7,7 +7,26 @@ let indice = 0; // Contador para seguir el orden de los mensajes
 
 
 function updateLoad(){
-    if (value>=100) {
+    
+    value++
+    progressLoad.value=value;
+
+    if (value == 20) {
+        clearInterval(interval)
+        interval=setInterval(updateLoad,20);
+    }
+
+    if (value == 60) {
+        clearInterval(interval)
+        interval=setInterval(updateLoad,40);
+    }
+
+    if (value == 85) {
+        clearInterval(interval)
+        interval=setInterval(updateLoad,100);
+    }
+
+    if (value>=102) {
         clearInterval(interval)
         document.querySelector('.pantallaCarga').style.display = 'none';
         document.getElementById("statsView").style.display = "flex";
@@ -15,9 +34,6 @@ function updateLoad(){
         document.querySelector("main").style.display = "block";
 
         game.start();
-    }else{
-        value++
-        progressLoad.value=value;
     }
 }
 
@@ -29,7 +45,7 @@ function startBarra(){
     value=0; 
     progressLoad.value=value;
     audio.play();  
-    interval=setInterval(updateLoad,1); // default is 80!
+    interval=setInterval(updateLoad,40); // default is 80!
 }
 
 
@@ -48,7 +64,7 @@ function mostrarDialogo() {
     let bocadillo = document.getElementById('bocadillo');
     
     // Mostrar el mensaje correspondiente
-    bocadillo.innerHTML = `<p>${dialogo[indice]}</p>`;
+    bocadillo.innerHTML = `<p>${dialogo[indice]}</p><p>Toca el personaje para descubrir más sobre el juego...</p>`;
     
     // Asegúrate de que el bocadillo esté visible
     bocadillo.style.display = 'block';

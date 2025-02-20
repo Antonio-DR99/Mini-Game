@@ -20,6 +20,11 @@ const ui = {
         ui.heliFuel.value = heliData.fuel;
         ui.heliFuel.max = heliData.maxFuel;
 
+        if(heliData.fuel < heliData.maxFuel*0.3) ui.heliFuel.classList.add('warning');
+        else ui.heliFuel.classList.remove('warning');
+        if(heliData.life < heliData.maxLife*0.3) ui.heliLife.classList.add('warning');
+        else ui.heliLife.classList.remove('warning');
+
         // bottom hud
         if(!heliData.moving && heliData.fuel == heliData.maxFuel) ui.buttonRepair.classList.add('enabled')
         else ui.buttonRepair.classList.remove('enabled')
@@ -72,7 +77,7 @@ const upgrades = {
             upgrades.priceFuel = Math.ceil(upgrades.priceFuel*1.75);
             heliData.maxFuel += 400;
             heliData.fuel += 400;
-            document.getElementById('costHFuel').textContent = upgrades.priceFuel;
+            document.getElementById('costFuel').textContent = upgrades.priceFuel;
         }
     },
 
