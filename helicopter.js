@@ -15,7 +15,7 @@ const heliData = {
         heliData.life -= 1.5;
         if(heliData.life <= 0){
             heliData.life = 0;
-            game.death('broken');
+            game.death('life');
         }
     },
     repair() {
@@ -29,7 +29,7 @@ const heliData = {
         if(heliData.moving){
             heliData.fuel -= 1;
             if(heliData.fuel <= 0) {
-                game.death('lowFuel');
+                game.death('fuel');
             }
         } else {
             if(heliData.fuel < heliData.maxFuel) heliData.fuel += 5;
