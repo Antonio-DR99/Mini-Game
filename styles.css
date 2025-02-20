@@ -87,6 +87,32 @@ main{
 
 #buttonsView{
     display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+    & .spacer{
+        width: 80px;
+    }
+
+    & .upgradeButton{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Jersey 20', sans-serif;
+
+        > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
 
     button{
         width: 60px;
@@ -105,10 +131,18 @@ main{
         }
 
         &.enabled{
-            border-color: #e5fff6;
-            background-color: #76d2b4;
             img{ filter: none;}
             cursor: var(--pointer);
+
+            &#upgHeal{border-color: #dff5d4; background-color: #a5f39e;}
+            &#upgSpeed{border-color: #cde5ff; background-color: #7397d6;}
+            &#upgFuel{border-color: #fbc0b9; background-color: #cb8973;}
+            &#butRepair{border-color: #e5fff6; background-color: #76d2b4;}
+
+            &:hover{
+                border-color: #ffd700 !important;
+                background-color: #ffef92 !important;
+            }
         }
     }
 }

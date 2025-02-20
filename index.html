@@ -65,7 +65,35 @@
     <main></main>
 
     <div id="buttonsView">
-        <button onclick="heliData.startRepair()">
+        <div class="upgradeButton">
+            <button onclick="upgrades.health()" id="upgHeal">
+                <img src="./resources/interfaz/vidaUp.png">
+            </button>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="costHealth">5</p>
+            </div>
+        </div>
+        <div class="upgradeButton">
+            <button onclick="upgrades.fuel()" id="upgFuel">
+                <img src="./resources/interfaz/fuelUp.png">
+            </button>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="costFuel">5</p>
+            </div>
+        </div>
+        <div class="upgradeButton">
+            <button onclick="upgrades.speed()" id="upgSpeed">
+                <img src="./resources/interfaz/velocidadUp.png">
+            </button>
+            <div>
+                <img src="./resources/interfaz/coin.png">
+                <p id="costSpeed">10</p>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <button onclick="heliData.startRepair()" id="butRepair">
             <img src="./resources/interfaz/reparar.png">
         </button>
     </div>

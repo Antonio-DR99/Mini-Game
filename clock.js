@@ -41,7 +41,7 @@ const timer = {
                 }
             }
         }
-        if(timer.genTicks % 350 == 0 && Math.random() < 0.65) foodGenerate();
+        if(timer.genTicks % 300 == 0 && Math.random() < 0.65) foodGenerate();
         timer.genTicks++;
     },
 
