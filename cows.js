@@ -60,6 +60,8 @@ function cowAction(cowId) {
 function removeAllCows() {
     for (i=0; i<cowsData.length; i++){
         if(cowsData[i].state == 'default') killCow(i, true);
+        let cow = document.getElementById(`cow${i}`)
+        if(cowsData[i].state == 'rescued' && cow) hideCow(cow);
     }
     cowsData = [];
 }
