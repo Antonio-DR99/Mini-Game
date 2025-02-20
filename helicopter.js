@@ -68,9 +68,10 @@ function moveHelicopter(cowId){
     // Cambiar el estado a miovimeinto
     heliData.moving = true; 
     heliData.repairing = false;
-
     let helicopter = document.getElementById("helicopter"); 
     let cow = document.getElementById(`cow${cowId}`);
+
+    main.classList.add("HelicopterMoving");
 
     //resetear las animaciones
     helicopter.classList.remove("move","moveBack"); 
@@ -153,7 +154,8 @@ function restoreCow(cow,destinationTop,destinationLeft){
     cow.style.pointerEvents="none";
     
     heliData.moving = false; //permitir de nuevo hacer clic al terminar el movimeinto
-    
+    main.classList.remove("HelicopterMoving");
+
     setTimeout(hideCow, 6000, cow);
     game.cowsAbd++;
     ui.updateScores();
