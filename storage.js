@@ -1,5 +1,5 @@
 // Almacenamiento con los elementos creados
-const cowsData = [] // posX, posY, state, life, maxLife
+let cowsData = [] // posX, posY, state, life, maxLife
 
 // Información del tamaño de los elementos
 const info = {

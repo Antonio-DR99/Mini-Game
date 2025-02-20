@@ -74,10 +74,9 @@ function eatFood(cowId){
 
         cow.classList.add("movecow");
         let id = foodClose.id.replace('food', '');
-        foods[id].status = 'eaten'
 
         setTimeout(function() {
-            foodClose.style.visibility = 'hidden';
+            foodDelete(id);
             cow.classList.remove("movecow");
             cowHeal(cowId);
         }, 4000);
@@ -86,4 +85,12 @@ function eatFood(cowId){
 function cowHeal(who) {
     cowsData[who].life += rngSeconds(5, 10);
     if(cowsData[who].life > cowsData[who].maxLife) cowsData[who].life = cowsData[who].maxLife;
+}
+
+function removeFood(){
+for (i=0; i<foods.length; i++){
+    if(foods[i].status !== 'invisible') foodDelete(i);
+}
+foods = [];
+
 }

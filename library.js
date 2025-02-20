@@ -38,6 +38,7 @@ const game = {
         removeAllCows()
         timer.disable()
         cloud.disable()
+        removeFood()
     }
 };
 

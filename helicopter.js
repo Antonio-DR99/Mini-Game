@@ -94,10 +94,10 @@ function moveHelicopter(cowId){
 
 //Funcion para mover el heli de regreso a la base mas cercana
 function moveHelicopterBack(cow){
+    if (!game.started) return;
     let helicopter=document.getElementById("helicopter"); 
 
     let bases=document.querySelectorAll(".base");
-
 
     let baseClose=null; //almacenar la base mas cercana
     let minDistance=Infinity;
