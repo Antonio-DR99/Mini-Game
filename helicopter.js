@@ -93,7 +93,7 @@ function moveHelicopter(cowId){
 
     setTimeout(function() {
         cow.classList.add('abducing');
-    }, heliData.currentSpeed - 1500);
+    }, heliData.currentSpeed - heliData.currentSpeed/4);
 
     //Esperar 4s antes de llamar a la funcion de regreso
     
